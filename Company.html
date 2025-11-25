@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>(주)로지션 회사소개서 리뉴얼 기획 제안서</title>
+  <style>
+    @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+
+    :root {
+      --color-navy: #1A237E;
+      --color-blue: #1976D2;
+      --color-green: #2E7D32;
+      --color-dark-gray: #424242;
+      --color-gray: #757575;
+      --color-light-gray: #BDBDBD;
+      --color-bg: #F5F6F8;
+      --color-white: #FFFFFF;
+      --border-color: #E0E0E0;
+    }
+
+    body {
+      font-family: 'Pretendard', sans-serif;
+      background-color: #f9fafb;
+      color: var(--color-dark-gray);
+      line-height: 1.7;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 40px;
+      background-color: var(--color-white);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      border-radius: 8px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 60px;
+      border-bottom: 2px solid var(--color-navy);
+      padding-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      color: var(--color-navy);
+      font-weight: 800;
+      margin: 0;
+    }
+
+    header .subtitle {
+      font-size: 1.1em;
+      color: var(--color-gray);
+      margin-top: 10px;
+    }
+
+    main > section {
+      margin-bottom: 80px;
+    }
+
+    h2 {
+      font-size: 2em;
+      font-weight: 700;
+      color: var(--color-navy);
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 15px;
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+    }
+
+    h2::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 28px;
+      background-color: var(--color-green);
+      margin-right: 12px;
+      border-radius: 2px;
+    }
+
+    h3 {
+      font-size: 1.5em;
+      font-weight: 600;
+      color: var(--color-dark-gray);
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+
+    h4 {
+      font-size: 1.2em;
+      font-weight: 600;
+      color: var(--color-dark-gray);
+      margin-top: 30px;
+      margin-bottom: 15px;
+      padding-left: 10px;
+      border-left: 4px solid var(--color-blue);
+    }
+
+    p, ul, li {
+      font-size: 1em;
+      color: var(--color-dark-gray);
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 10px;
+    }
+
+    ul li::before {
+      content: '✔';
+      position: absolute;
+      left: 0;
+      color: var(--color-green);
+      font-weight: bold;
+    }
+
+    .problem-analysis-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .problem-card {
+      background-color: var(--color-bg);
+      padding: 25px;
+      border-radius: 8px;
+      border-left: 5px solid var(--color-blue);
+    }
+
+    .problem-card h4 {
+      border-left: none;
+      padding-left: 0;
+      margin-top: 0;
+      color: var(--color-navy);
+    }
+
+    .problem-card ul li::before {
+      content: '•';
+      color: var(--color-gray);
+    }
+
+    .strategy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .strategy-card {
+      padding: 25px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .strategy-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    }
+
+    .strategy-card .icon {
+      font-size: 3em;
+      color: var(--color-green);
+      margin-bottom: 15px;
+    }
+
+    .strategy-card h4 {
+      border: none;
+      padding: 0;
+      margin: 0 0 10px 0;
+      font-size: 1.3em;
+      color: var(--color-navy);
+    }
+
+    .page-plan {
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      margin-bottom: 40px;
+      padding: 25px;
+      background-color: #fff;
+    }
+
+    .page-plan-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .page-plan-header h3 {
+      margin: 0;
+      font-size: 1.6em;
+      color: var(--color-navy);
+    }
+
+    .page-plan-header .page-number {
+      font-size: 1.2em;
+      font-weight: 700;
+      color: var(--color-white);
+      background-color: var(--color-green);
+      padding: 5px 15px;
+      border-radius: 20px;
+    }
+
+    .plan-section {
+      margin-bottom: 20px;
+    }
+
+    .plan-section h5 {
+      font-size: 1.1em;
+      font-weight: 600;
+      color: var(--color-dark-gray);
+      margin-bottom: 10px;
+    }
+
+    .plan-section > div, .plan-section > p, .plan-section > ul {
+      background-color: var(--color-bg);
+      padding: 15px;
+      border-radius: 6px;
+    }
+
+    .plan-section > ul li::before {
+      content: '›';
+      color: var(--color-blue);
+    }
+
+    .design-guide-visual {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: center;
+      background-color: var(--color-bg);
+      padding: 20px;
+      border-radius: 6px;
+    }
+
+    .layout-mockup {
+      border: 2px dashed var(--color-light-gray);
+      background-color: var(--color-white);
+      height: 250px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 0.9em;
+      color: var(--color-gray);
+      position: relative;
+    }
+
+    .mockup-header {
+      width: 100%;
+      height: 30px;
+      background-color: var(--color-navy);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8em;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .mockup-flex {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      gap: 10px;
+    }
+
+    .mockup-left, .mockup-right {
+      flex: 1;
+      border: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .mockup-graph {
+      width: 80%;
+      height: 60%;
+      background: repeating-linear-gradient(
+        45deg,
+        #e3f2fd,
+        #e3f2fd 10px,
+        #bbdefb 10px,
+        #bbdefb 20px
+      );
+    }
+
+    .mockup-timeline {
+      width: 100%;
+      list-style: none;
+      padding: 0;
+    }
+    .mockup-timeline li { padding-left: 0; position: relative; }
+    .mockup-timeline li::before { content: '20XX'; left: -40px; top: 0; color: var(--color-navy); font-weight: bold; }
+    .mockup-timeline li:not(:last-child) { margin-bottom: 20px; }
+    .mockup-timeline li:not(:last-child)::after { content: ''; width: 2px; height: 15px; background: var(--color-light-gray); position: absolute; left: -20px; top: 20px; }
+
+    .mockup-grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 5px;
+      width: 100%;
+      height: 100%;
+    }
+    .mockup-grid-3 > div { border: 1px solid var(--border-color); background: #f1f1f1; }
+
+    .mockup-flowchart {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 100%;
+    }
+    .flow-step { border: 1px solid var(--color-blue); padding: 10px; border-radius: 4px; }
+    .flow-arrow { color: var(--color-blue); font-size: 1.5em; }
+
+    .guide-details ul { margin-top: 0; }
+    .guide-details ul li::before { content: '▪'; color: var(--color-blue); }
+
+    .color-palette {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+
+    .color-swatch {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 0.8em;
+      font-weight: 500;
+      color: var(--color-dark-gray);
+      border: 1px solid var(--border-color);
+    }
+
+    .color-swatch.dark-bg {
+      color: var(--color-white);
+    }
+
+    .color-swatch span {
+      display: block;
+      font-weight: 600;
+    }
+
+    .color-swatch .hex {
+      font-size: 0.9em;
+      margin-top: 4px;
+      font-family: monospace;
+    }
+
+    .full-width-section {
+      background-color: var(--color-navy);
+      color: var(--color-white);
+      padding: 40px;
+      margin: 60px 0;
+      border-radius: 8px;
+    }
+
+    .full-width-section h3 {
+      color: var(--color-white);
+      text-align: center;
+    }
+
+    .full-width-section p {
+      color: var(--color-light-gray);
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .container { padding: 20px; }
+      header h1 { font-size: 2em; }
+      h2 { font-size: 1.6em; }
+      h3 { font-size: 1.3em; }
+      .design-guide-visual { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>(주)로지션 회사소개서 리뉴얼 기획 제안서</h1>
+      <p class="subtitle">Project: Master Company Profile Renewal | Date: 2025-11-24</p>
+    </header>
+
+    <main>
+      <!-- 1. 프로젝트 개요 -->
+      <section id="overview">
+        <h2>1. 프로젝트 개요</h2>
+        <p>본 기획서는 ㈜로지션의 기존 회사소개서(Ver. 250729)를 기반으로, <strong>주요 타겟 고객인 물류/SCM팀의 평가 기준과 의사결정 프로세스에 최적화된 '마스터 버전'으로 재구성</strong>하기 위한 리뉴얼 기획안입니다.</p>
+        <p>본 프로젝트는 다음의 핵심 목표를 가지고 설계되었습니다.</p>
+        <ul>
+          <li>물류팀·SCM팀의 검토 기준에 맞춘 논리적 구조 확립</li>
+          <li>로지션의 핵심 차별화 요소(운영력, 리더십, 안전관리)의 전략적 부각</li>
+          <li>기존 소개서의 단점(산만한 구성, 가독성 저하, 객관적 증거 부족) 해소</li>
+          <li>주요 고객사 제안서 수준에 준하는 디자인·문구·흐름으로 전문성 극대화</li>
+        </ul>
+      </section>
+
+      <!-- 2. 현황 및 문제점 분석 -->
+      <section id="analysis">
+        <h2>2. 현황 및 문제점 분석</h2>
+        <p>기존 회사소개서는 기업의 기본 정보와 성과를 충실히 담고 있으나, 전략적 고객 설득 관점에서 다음과 같은 개선점을 보입니다.</p>
+        <div class="problem-analysis-grid">
+          <div class="problem-card">
+            <h4>구조 및 논리 흐름</h4>
+            <ul>
+              <li>단순 정보 나열식 구성으로, 핵심 역량이 유기적으로 연결되지 않음.</li>
+              <li>안전/리스크 관리 항목이 후순위로 배치되어 중요도 부각 미흡.</li>
+              <li>‘왜 로지션이어야 하는가?’에 대한 설득형 내러티브 부재.</li>
+            </ul>
+          </div>
+          <div class="problem-card">
+            <h4>콘텐츠 및 메시지</h4>
+            <ul>
+              <li>운영 전문성을 뒷받침할 방법론/프로세스/정량 데이터 부족.</li>
+              <li>성공 사례가 단순 나열에 그쳐 “어떻게 해결했는가” 과정 설명 없음.</li>
+              <li>고객 유지율, 재계약률 등 파트너십 안정성 지표(KPI) 누락.</li>
+            </ul>
+          </div>
+          <div class="problem-card">
+            <h4>디자인 및 가독성</h4>
+            <ul>
+              <li>복잡한 색상/레이아웃으로 전문성과 신뢰감 저하.</li>
+              <li>텍스트 밀도가 높은 페이지가 많아 핵심 메시지 파악 어려움.</li>
+              <li>데이터 시각화가 복잡하여 직관적 정보 전달 한계.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. 리뉴얼 방향성 -->
+      <section id="strategy">
+        <h2>3. 리뉴얼 방향성 (전략)</h2>
+        <p>단순 자기소개가 아니라 고객 비즈니스 성공을 위한 ‘전략적 파트너’ 가치를 증명하는 제안서로 진화합니다. 이를 위해 다음 4가지 핵심 전략을 적용합니다.</p>
+        <div class="strategy-grid">
+          <div class="strategy-card">
+            <div class="icon">📊</div>
+            <h4>고객 관점의 구조 재설계</h4>
+            <p>실제 심사 순서(신뢰도 → 역량 → 안전 → 실증)에 맞춰 목차 전면 재구성</p>
+          </div>
+          <div class="strategy-card">
+            <div class="icon">🛡️</div>
+            <h4>핵심 콘텐츠 강화</h4>
+            <p>안전경영, 거버넌스, 정량 성과(KPI) 등 신뢰 자료 대폭 보강</p>
+          </div>
+          <div class="strategy-card">
+            <div class="icon">🎨</div>
+            <h4>프리미엄 시각화</h4>
+            <p>절제된 컬러/인포그래픽/레이아웃으로 시각적 신뢰감 확보</p>
+          </div>
+          <div class="strategy-card">
+            <div class="icon">📈</div>
+            <h4>증명 기반 내러티브</h4>
+            <p>프로세스, 데이터, Case Study로 주장→사실 전환</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. 콘텐츠 구성 -->
+      <section id="content-structure">
+        <h2>4. 콘텐츠 구성 (29P 마스터 기획안)</h2>
+        <p>29페이지 마스터 기획안은 7개 장으로 구성되며, 각 페이지는 명확한 목적을 가지고 유기적으로 연결됩니다.</p>
+
+        <!-- I. INTRODUCTION -->
+        <div class="full-width-section">
+          <h3>Ⅰ. INTRODUCTION (1-4p)</h3>
+          <p>첫인상을 결정하는 단계. 정체성과 성장성을 임팩트 있게 전달합니다.</p>
+        </div>
+
+        <!-- p1 Cover -->
+        <div class="page-plan">
+          <div class="page-plan-header">
+            <h3>Cover</h3><span class="page-number">p.1</span>
+          </div>
+          <div class="plan-section">
+            <h5>① 기존 분석</h5>
+            <p>로고 크기 과도 / 텍스트 배열 분산으로 무게감 부족.</p>
+          </div>
+          <div class="plan-section">
+            <h5>② 리뉴얼 방향</h5>
+            <p>Deep Navy 기반 커버 스타일. 사진 + 반투명 오버레이 + 중앙 포커스 문구. 정보 최소화(로고/슬로건/서브텍스트).</p>
+          </div>
+          <div class="plan-section">
+            <h5>③ 문구 초안</h5>
+            <p><strong>LOGISIAN</strong><br/><strong>Your Best Logistics Operation Partner</strong><br/>
+              전국 다수의 물류센터 운영 경험을 기반으로 안정적이고 체계적인 3PL 운영 서비스를 제공합니다.</p>
+          </div>
+          <div class="plan-section">
+            <h5>④ 디자인 가이드 (시각화 예시)</h5>
+            <div class="design-guide-visual">
+              <div class="layout-mockup">
+                <div style="position:absolute;top:15px;right:15px;font-size:.8em;">LOGO</div>
+                <div style="background:rgba(255,255,255,.8);padding:20px;border-radius:4px;">
+                  <h4 style="margin:0;padding:0;border:none;color:var(--color-navy);">Main Slogan</h4>
+                  <p style="font-size:.9em;margin:5px 0 0 0;">Sub Text...</p>
+                </div>
+              </div>
+              <div class="guide-details">
+                <ul>
+                  <li><strong>배경:</strong> #F5F6F8 또는 고해상도 센터 이미지</li>
+                  <li><strong>로고:</strong> 우측 상단 15% 비율</li>
+                  <li><strong>문구:</strong> 중앙 정렬 / Pretendard SemiBold</li>
+                  <li><strong>오버레이:</strong> 화이트 20% 적용</li>
+                </ul>
+                <div class="color-palette">
+                  <div class="color-swatch dark-bg" style="background-color:#1A237E;"><span>Deep Navy</span><span class="hex">#1A237E</span></div>
+                  <div class="color-swatch" style="background-color:#F5F6F8;"><span>BG</span><span class="hex">#F5F6F8</span></div>
+                  <div class="color-swatch dark-bg" style="background-color:#424242;"><span>Text</span><span class="hex">#424242</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- p2 Contents -->
+        <div class="page-plan">
+          <div class="page-plan-header">
+            <h3>CONTENTS</h3><span class="page-number">p.2</span>
+          </div>
+          <div class="plan-section"><h5>① 기존 분석</h5>
+            <p>목차가 단순하고 구조적 깊이가 부족. 기존 순서도 고객 심사 방식과 불일치.</p>
+          </div>
+          <div class="plan-section"><h5>② 리뉴얼 방향</h5>
+            <p>심사 순서에 맞춘 7개 챕터로 재정렬: INTRODUCTION → COMPANY &amp; GOVERNANCE → SERVICE &amp; CORE COMPETENCY → SAFETY MANAGEMENT SYSTEM → CREDENTIALS &amp; SOCIAL TRUST → NETWORK &amp; CASE STUDY → CLOSING.</p>
+          </div>
+          <div class="plan-section"><h5>③ 문구 초안</h5>
+            <ul>
+              <li>INTRODUCTION</li>
+              <li>COMPANY &amp; GOVERNANCE</li>
+              <li>SERVICE &amp; CORE COMPETENCY</li>
+              <li>SAFETY &amp; RISK MANAGEMENT</li>
+              <li>CREDENTIALS &amp; SOCIAL TRUST</li>
+              <li>NETWORK &amp; CASE STUDY</li>
+              <li>CLOSING</li>
+            </ul>
+          </div>
+          <div class="plan-section"><h5>④ 디자인 가이드 (시각화 예시)</h5>
+            <div class="design-guide-visual">
+              <div class="layout-mockup">
+                <div class="mockup-header">Deep Navy Header Bar</div>
+                <div class="mockup-grid-3" style="margin-top:35px;height:calc(100% - 35px);">
+                  <div>Card 1</div><div>Card 2</div><div>Card 3</div>
+                  <div>Card 4</div><div>Card 5</div><div>Card 6</div>
+                </div>
+              </div>
+              <div class="guide-details">
+                <ul>
+                  <li>카드형 6섹션 정렬</li>
+                  <li>단색 선형 아이콘 사용</li>
+                  <li>상단 Deep Navy 바 적용</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- p3 Company Overview -->
+        <div class="page-plan">
+          <div class="page-plan-header">
+            <h3>회사 개요</h3><span class="page-number">p.3</span>
+          </div>
+          <div class="plan-section"><h5>① 기존 분석</h5>
+            <p>기본 정보는 있으나 운영범위·산업군·센터 수 정보 부족, 그래프 디자인 복잡.</p>
+          </div>
+          <div class="plan-section"><h5>② 리뉴얼 방향</h5>
+            <p>설립/사업분야/고객군/전국 운영범위 명확히 기재. 그래프 단순화, 산업군 분포 추가.</p>
+          </div>
+          <div class="plan-section"><h5>③ 문구 초안</h5>
+            <p>㈜로지션은 물류센터 위탁운영, 유통가공, 반품·폐기센터 운영, 물류 효율화 컨설팅을 수행하는 3PL 전문 운영기업입니다.<br/>
+            국내 대형 유통·식품·리테일·패션·화장품 등 다양한 산업 고객과 협력하며 운영 역량을 축적해오고 있습니다.</p>
+          </div>
+          <div class="plan-section"><h5>④ 디자인 가이드 (시각화 예시)</h5>
+            <div class="design-guide-visual">
+              <div class="layout-mockup">
+                <div class="mockup-flex">
+                  <div class="mockup-left">Text Area<br/>(회사 정보/산업군)</div>
+                  <div class="mockup-right">Graph Area<div class="mockup-graph"></div></div>
+                </div>
+              </div>
+              <div class="guide-details">
+                <ul>
+                  <li>좌측 텍스트 / 우측 그래프 2단</li>
+                  <li>핵심 숫자 Bold</li>
+                  <li>단색 막대그래프</li>
+                </ul>
+                <div class="color-palette">
+                  <div class="color-swatch dark-bg" style="background-color:#1976D2;"><span>Corp. Blue</span><span class="hex">#1976D2</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- p4 Finance & Growth -->
+        <div class="page-plan">
+          <div class="page-plan-header">
+            <h3>재무 및 성장성</h3><span class="page-number">p.4</span>
+          </div>
+          <div class="plan-section"><h5>① 기존 분석</h5>
+            <p>재무 그래프는 좋으나 색상/그리드라인이 복잡해 가독성 저하.</p>
+          </div>
+          <div class="plan-section"><h5>② 리뉴얼 방향</h5>
+            <p>3개 그래프를 하나의 대형 통합 차트로 묶고, CAGR/고객 유지율/재계약률 등 평가 요소 추가.</p>
+          </div>
+          <div class="plan-section"><h5>③ 문구 초안</h5>
+            <p>최근 3년간 안정적인 성장을 이어오고 있으며, 특히 장기 고객사 비중이 확대되며 지속성 있는 성장 구조를 구축하고 있습니다.</p>
+          </div>
+          <div class="plan-section"><h5>④ 디자인 가이드 (시각화 예시)</h5>
+            <div class="design-guide-visual">
+              <div class="layout-mockup">
+                <div class="mockup-header">3Y Trend Integrated Chart</div>
+                <div style="margin-top:35px;width:90%;height:70%;border:1px solid var(--border-color);"></div>
+              </div>
+              <div class="guide-details">
+                <ul>
+                  <li>Deep Navy 단일 컬러</li>
+                  <li>Bold 숫자 + 얇은 선 그래프</li>
+                  <li>3년 Trend 중심</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- II. COMPANY & GOVERNANCE -->
+        <div class="full-width-section">
+          <h3>Ⅱ. COMPANY &amp; GOVERNANCE (5-8p)</h3>
+          <p>회사 역사와 운영 주체를 소개하여 신뢰성과 안정성을 증명합니다.</p>
+        </div>
+
+        <!-- p5 History -->
+        <div class="page-plan">
+          <div class="page-plan-header"><h3>연혁</h3><span class="page-number">p.5</span></div>
+          <div class="plan-section"><h5>① 기존 분석</h5>
+            <p>연혁 텍스트 밀도가 높아 포인트가 흐려짐.</p>
+          </div>
+          <div class="plan-section"><h5>② 리뉴얼 방향</h5>
+            <p>“전환점 중심 연혁”으로 재정비. 자동화/반품센터/대형 계약 등 메가 이벤트 강조.</p>
+          </div>
+          <div class="plan-section"><h5>③ 문구 초안</h5>
+            <p>로지션은 운영 전문성과 품질 중심 체계를 기반으로 전국 단위 운영 역량을 확장해왔습니다.</p>
+            <ul>
+              <li>자동화 물류센터 운영 시작</li>
+              <li>반품·폐기센터 구축 및 전문 운영</li>
+              <li>산업군 확대(식자재·패션·리테일 등)</li>
+              <li>전국 센터 네트워크 확장</li>
+              <li>ISO 인증 획득</li>
+            </ul>
+          </div>
+          <div class="plan-section"><h5>④ 디자인 가이드 (시각화 예시)</h5>
+<div class="design-guide-visual">
+    <div class="layout-mockup" style="height:180px;">
+        <div style="
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            width:100%;
+            padding:0 20px;
+        ">
+            <div style="text-align:center;">
+                <div style="font-weight:700;color:#1A237E;">20XX</div>
+                <div style="margin-top:5px;">전환점 1</div>
+            </div>
+
+            <div style="flex:1;height:2px;background:#BDBDBD;margin:0 15px;"></div>
+
+            <div style="text-align:center;">
+                <div style="font-weight:700;color:#1A237E;">20XX</div>
+                <div style="margin-top:5px;">전환점 2</div>
+            </div>
+
+            <div style="flex:1;height:2px;background:#BDBDBD;margin:0 15px;"></div>
+
+            <div style="text-align:center;">
+                <div style="font-weight:700;color:#1A237E;">20XX</div>
+                <div style="margin-top:5px;">전환점 3</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="guide-details">
+        <ul>
+            <li>수평 타임라인</li>
+            <li>연도 Bold / Navi 컬러 (#1A237E)</li>
+            <li>전환점은 동일 간격으로 배치</li>
+            <li>연결 라인은 Light Gray (#BDBDBD)</li>
+        </ul>
+    </div>
+</div>
+          </div>
+        </div>
+
+        <!-- p6 Management -->
+        <div class="page-plan">
+          <div class="page-plan-header"><h3>경영진 소개</h3><span class="page-number">p.6</span></div>
+          <div class="plan-section"><h5>① 기존 분석</h5>
+            <p>정보는 충분하나 박스가 많아 시각적 피로감 큼.</p>
+          </div>
+          <div class="plan-section"><h5>② 리뉴얼 방향</h5>
+            <p>CEO/COO/CSO 중심으로 핵심 역할 요약.</p>
+          </div>
+          <div class="plan-section"><h5>③ 문구 초안</h5>
+            <p>로지션의 경영진은 물류 운영·전략·품질 분야에서 오랜 경험과 전문성을 갖춘 전문가들로 구성되어 있습니다.</p>
+            <ul>
+              <li>CEO: 전략 방향 제시 및 주요 파트너십 총괄</li>
+              <li>COO: 전국센터 운영 총괄, 생산성 향상 프로젝트 주도</li>
+              <li>CSO: 안전·품질 체계 구축, ISO 기반 운영관리 총괄</li>
+            </ul>
+          </div>
+          <div class="plan-section"><h5>④ 디자인 가이드 (시각화 예시)</h5>
+            <div class="design-guide-visual">
+              <div class="layout-mockup">
+                <div class="mockup-grid-3">
+                  <div>CEO</div><div>COO</div><div>CSO</div>
+                </div>
+              </div>
+              <div class="guide-details">
+                <ul>
+                  <li>3분할 구성</li>
+                  <li>라인 연결 구조로 역할 연계 표현</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- p7 Organization -->
+        <div class="page-plan">
+          <div class="page-plan-header"><h3>조직도</h3><span class="page-number">p.7</span></div>
+          <div class="plan-section"><h5>① 기존 분석</h5>
+            <p>실제 구조 반영은 좋으나 색상·분류가 복잡함.</p>
+          </div>
+          <div class="plan-section"><h5>② 리뉴얼 방향</h5>
+            <p>본사(Functional) vs 운영(Operation) 구분, 운영 중심 구조 강조.</p>
+          </div>
+          <div class="plan-section"><h5>③ 문구 초안</h5>
+            <p>로지션의 조직은 운영 실행력을 중심으로 설계되어 있으며, 본사는 전략·품질·안전·교육 기능을 통해 운영을 지원합니다.</p>
+          </div>
+          <div class="plan-section"><h5>④ 디자인 가이드 (시각화 예시)</h5>
+            <div class="design-guide-visual">
+              <div class="layout-mockup">
+                <div style="width:90%;height:70%;border:1px solid var(--border-color);display:flex;align-items:center;justify-content:center;">
+                  Org Chart Placeholder
+                </div>
+              </div>
+              <div class="guide-details">
+                <ul>
+                  <li>본사=Gray / 운영=Navy 컬러 구분</li>
+                  <li>직선형 계층 구조</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- p8 Nationwide Ops System -->
+        <div class="page-plan">
+          <div class="page-plan-header"><h3>전국 운영 체계 (신규)</h3><span class="page-number">p.8</span></div>
+          <div class="plan-section"><h5>① 구성 이유</h5>
+            <p>협력사 선정 시 핵심인 ‘운영 리스크 관리 및 표준화된 운영 체계’를 증명하기 위함.</p>
+          </div>
+          <div class="plan-section"><h5>② 문구 초안</h5>
+            <ul>
+              <li>센터장–파트장–조장 구조 기반 현장 리더십 운영</li>
+              <li>일일 운영 회의 / 품질 점검 / 출석률·생산성 관리</li>
+              <li>신규인력 교육 → 현장배치 프로세스</li>
+              <li>생산성 및 SLA 준수 기반 운영</li>
+            </ul>
+          </div>
+          <div class="plan-section"><h5>③ 디자인 가이드 (시각화 예시)</h5>
+            <div class="design-guide-visual">
+              <div class="layout-mockup">
+                <div class="mockup-flowchart">
+                  <div class="flow-step">Step 1<br/>인력 교육</div>
+                  <div class="flow-arrow">→</div>
+                  <div class="flow-step">Step 2<br/>일일 운영</div>
+                  <div class="flow-arrow">→</div>
+                  <div class="flow-step">Step 3<br/>성과 관리</div>
+                </div>
+              </div>
+              <div class="guide-details">
+                <ul>
+                  <li>3단계 인포그래픽</li>
+                  <li>KPI 로드맵/플로우차트 형태</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- III. SERVICE & CORE COMPETENCY -->
+        <div class="full-width-section">
+          <h3>Ⅲ. SERVICE &amp; CORE COMPETENCY (9-13p)</h3>
+          <p>서비스 범위와 핵심 역량을 구체적으로 제시합니다.</p>
+        </div>
+
+        <!-- p9 Business Overview -->
+        <div class="page-plan">
+          <div class="page-plan-header"><h3>사업 개요</h3><span class="page-number">p.9</span></div>
+          <div class="plan-section"><h5>① 기존 분석</h5>
+            <p>내용은 좋으나 운송 중심 문구 존재(삭제 필요).</p>
+          </div>
+          <div class="plan-section"><h5>② 리뉴얼 방향</h5>
+            <p>물류센터 운영 중심으로 재정렬, 하도급 기반 운영 전문성 강조.</p>
+          </div>
+          <div class="plan-section"><h5>③ 문구 초안</h5>
+            <p>로지션은 물류센터 운영에 특화된 전문기업으로서 현장 맞춤형 운영 역량과 유통가공, 반품·폐기센터 운영 능력을 보유하고 있습니다.</p>
+          </div>
+          <div class="plan-section"><h5>④ 디자인 가이드 (시각화 예시)</h5>
+            <div class="design-guide-visual">
+              <div class="layout-mockup">
+                <div class="mockup-grid-3">
+                  <div>운영</div><div>유통가공</div><div>컨설팅</div>
+                </div>
+              </div>
+              <div class="guide-details">
+                <ul><li>카드형 3분할(운영/가공/컨설팅)</li></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- p10 Business Scope -->
+        <div class="page-plan">
+          <div class="page-plan-header"><h3>사업 범위</h3><span class="page-number">p.10</span></div>
+          <div class="plan-section"><h5>① 기존 분석</h5>
+            <p>원형 인포는 우수하나 설명 부족.</p>
+          </div>
+          <div class="plan-section"><h5>② 문구 초안</h5>
+            <ul>
+              <li>유통가공(라벨링/번들링)</li>
+              <li>실사/검수/재고조사</li>
+              <li>반품/폐기센터 운영</li>
+              <li>프로젝트(TFT) 운영</li>
+              <li>품질관리</li>
+              <li>인력관리</li>
+              <li>운영지원</li>
+            </ul>
+          </div>
+          <div class="plan-section"><h5>③ 디자인 가이드</h5>
+            <p>원형 인포 유지 + 단색 재정비.</p>
+          </div>
+        </div>
+
+        <!-- p11 Core Competency 1 -->
+        <div class="page-plan">
+          <div class="page-plan-header"><h3>핵심역량 ① — 인력 운영</h3><span class="page-number">p.11</span></div>
+          <div class="plan-section"><h5>① 기존 분석</h5>
+            <p>현장 사진 활용은 매우 좋은 구성.</p>
+          </div>
+          <div class="plan-section"><h5>② 문구 초안</h5>
+            <p>로지션은 안정적 인력 공급 체계와 교육 시스템을 갖추고 있으며, 출석률·숙련도·현장 리더십 기반의 운영 품질 관리가 가능합니다.</p>
+          </div>
+          <div class="plan-section"><h5>③ 디자인</h5>
+            <p>현장 사진 3매 + 텍스트 2분할.</p>
+          </div>
+        </div>
+
+        <!-- p12 Core Competency 2 -->
+        <div class="page-plan">
+          <div class="page-plan-header"><h3>핵심역량 ② — 자동화 설비 운영</h3><span class="page-number">p.12</span></div>
+          <div class="plan-section"><h5>① 기존 분석</h5>
+            <p>PAS/DPS 운영 이미지 좋음.</p>
+          </div>
+          <div class="plan-section"><h5>② 문구 초안</h5>
+            <p>PAS·DPS 기반 자동화 운영 경험을 통해 고속 처리 및 대량 분류에 안정적으로 대응합니다.</p>
+          </div>
+          <div class="plan-section"><h5>③ 디자인</h5>
+            <p>장비 사진 Full width + 핵심 수치 오버레이.</p>
+          </div>
+        </div>
+
+        <!-- p13 Core Competency 3 -->
+        <div class="page-plan">
+          <div class="page-plan-header"><h3>핵심역량 ③ — 품질/안전</h3><span class="page-number">p.13</span></div>
+          <div class="plan-section"><h5>① 기존 분석</h5>
+            <p>기존 페이지는 품질/안전 설명이 간단하여 안전 정보가 부족.</p>
+          </div>
+          <div class="plan-section"><h5>② 리뉴얼 방향</h5>
+            <p>다음 안전 챕터(p14~15)에 자연스럽게 연결되는 Pre-page로 구성.</p>
+          </div>
+          <div class="plan-section"><h5>③ 문구 초안</h5>
+            <ul>
+              <li>로지션은 품질·안전을 운영의 최우선 가치로 두고 있습니다.</li>
+              <li>ISO 기반 프로세스와 현장 안전관리를 일체화하여 운영합니다.</li>
+              <li>품질 점검 및 오류 예방 프로세스</li>
+              <li>안전 수칙 준수 및 위험성 평가</li>
+              <li>작업자 교육 및 현장 리더 기반 안전문화 구축</li>
+            </ul>
+          </div>
+          <div class="plan-section"><h5>④ 디자인</h5>
+            <p>품질/안전 2컬럼, 하단에 Safety 챕터로 넘어가는 연결 화살표.</p>
+          </div>
+        </div>
+
+        <!-- IV. SAFETY MANAGEMENT SYSTEM -->
+        <div class="full-width-section" style="background-color:var(--color-green);">
+          <h3 style="color:#fff;">Ⅳ. SAFETY MANAGEMENT SYSTEM (14-15p)</h3>
+          <p style="color:#E8F5E9;">안전 경영 역량을 독립 챕터로 강화합니다.</p>
+        </div>
+
+        <!-- p14 Safety System -->
+        <div class="page-plan">
+          <div class="page-plan-header"><h3>안전경영체계 (신규 강화 1)</h3><span class="page-number">p.14</span></div>
+          <div class="plan-section"><h5>① 구성 이유</h5>
+            <p>2024~2025 협력사 평가의 핵심 요소. 무중단 운영 파트너십 증명.</p>
+          </div>
+          <div class="plan-section"><h5>② 문구 초안</h5>
+            <p>로지션은 ISO 45001 기반 안전보건경영체계를 전사적으로 운영하고 있습니다.</p>
+            <ul>
+              <li>신규 입사자 안전교육 및 장비 사용 교육</li>
+              <li>일일 TBM(Tool Box Meeting)</li>
+              <li>위험성평가(정기/수시)</li>
+              <li>작업현장 정기 점검 및 개선조치</li>
+              <li>안전보건 문서관리 체계</li>
+              <li>사고 발생 시 즉각 보고·조치 절차 운영</li>
+            </ul>
+          </div>
+          <div class="plan-section"><h5>③ 디자인</h5>
+            <p>Green 포인트 컬러(#2E7D32), 안전 아이콘 + 실제 TBM/점검 사진 2~3장.</p>
+          </div>
+        </div>
+
+        <!-- p15 Safety Process -->
+        <div class="page-plan">
+          <div class="page-plan-header"><h3>안전 실행 프로세스 (신규 강화 2)</h3><span class="page-number">p.15</span></div>
+          <div class="plan-section"><h5>① 문구 초안</h5>
+            <p>안전을 실행하는 전 과정은 다음과 같습니다.</p>
+            <ul>
+              <li>사전 예방 활동</li>
+              <li>교육 프로그램</li>
+              <li>장비 점검</li>
+              <li>위험성평가</li>
+              <li>일일 안전운영 / TBM / 위험요소 보고</li>
+              <li>관리감독자 현장 순찰</li>
+              <li>사고/리스크 대응(즉시 보고 → 원인 분석 → 개선조치 공유)</li>
+              <li>ESG 기반 안전 문화 확산(우수자 포상, 캠페인)</li>
+            </ul>
+          </div>
+          <div class="plan-section"><h5>② 디자인</h5>
+            <p>프로세스 Flow line, 4단계 컬러 구분.</p>
+          </div>
+        </div>
+
+        <!-- V. CREDENTIALS & SOCIAL TRUST -->
+        <div class="full-width-section">
+          <h3>Ⅴ. CREDENTIALS &amp; SOCIAL TRUST (16-21p)</h3>
+          <p>수상/인증/언론/고객지표 등 객관적 자료로 공신력을 증명합니다.</p>
+        </div>
+
+        <!-- p16 Press -->
+        <div class="page-plan">
+          <div class="page-plan-header"><h3>언론보도</h3><span class="page-number">p.16</span></div>
+          <div class="plan-section"><h5>① 기존 분석</h5>
+            <p>기사 스크린샷이 너무 크고 카드/격자 구조가 부족.</p>
+          </div>
+          <div class="plan-section"><h5>② 리뉴얼 방향</h5>
+            <p>기사 6개를 카드형으로 정렬, 제목·요약 중심으로 압축.</p>
+          </div>
+          <div class="plan-section"><h5>③ 문구 초안</h5>
+            <p>로지션은 다양한 언론보도를 통해 물류 운영 전문성과 사회적 가치를 인정받고 있습니다.</p>
+          </div>
+          <div class="plan-section"><h5>④ 디자인</h5>
+            <p>카드형 2x3 그리드, 동일 썸네일 크기.</p>
+          </div>
+        </div>
+
+        <!-- p17 Awards -->
+        <div class="page-plan">
+          <div class="page-plan-header"><h3>수상경력</h3><span class="page-number">p.17</span></div>
+          <div class="plan-section"><h5>③ 문구 초안</h5>
+            <ul>
+              <li>국가 및 지자체 표창</li>
+              <li>고용노동부 인증</li>
+              <li>물류산업 발전 유공 표창</li>
+            </ul>
+          </div>
+          <div class="plan-section"><h5>④ 디자인</h5>
+            <p>수상 로고/배지 좌측, 설명 우측 2단.</p>
+          </div>
+        </div>
+
+        <!-- p18 CSR & Academia -->
+        <div class="page-plan">
+          <div class="page-plan-header"><h3>사회공헌 &amp; 산학협력</h3><span class="page-number">p.18</span></div>
+          <div class="plan-section"><h5>①~④</h5>
+            <p>원본 소개서 p19 기반으로 구성. (세부 문구/디자인은 원본 확정본 반영 필요)</p>
+          </div>
+        </div>
+
+        <!-- p19 ISO -->
+        <div class="page-plan">
+          <div class="page-plan-header"><h3>ISO 인증</h3><span class="page-number">p.19</span></div>
+          <div class="plan-section"><h5>③ 문구 초안</h5>
+            <p>ISO 9001 / 14001 / 45001 인증을 통해 품질·환경·안전의 국제 기준을 충족하는 운영체계를 구축하고 있습니다.</p>
+          </div>
+          <div class="plan-section"><h5>④ 디자인</h5>
+            <p>인증 로고 3개를 동일 크기 카드로 정렬.</p>
+          </div>
+        </div>
+
+        <!-- p20 Retention -->
+        <div class="page-plan">
+          <div class="page-plan-header"><h3>고객 유지율 &amp; 재계약률</h3><span class="page-number">p.20</span></div>
+          <div class="plan-section"><h5>③ 문구 초안</h5>
+            <p>최근 4년간 고객 유지율은 지속 성장하고 있으며, 직계약 및 장기 재계약 비중이 확대되고 있습니다.</p>
+          </div>
+          <div class="plan-section"><h5>④ 디자인</h5>
+            <p>유지율/재계약률 2개 KPI를 큰 숫자 + 간단 막대그래프로 표현.</p>
+          </div>
+        </div>
+
+        <!-- p21 (Placeholder) -->
+        <div class="page-plan">
+          <div class="page-plan-header"><h3>대외 신뢰 지표 (추가)</h3><span class="page-number">p.21</span></div>
+          <div class="plan-section"><h5>①~④</h5>
+            <p>원본 소개서의 관련 지표/레퍼런스 페이지를 그대로 반영 예정. (세부 내용 확정 필요)</p>
+          </div>
+        </div>
+
+        <!-- VI. NETWORK & CASE STUDY -->
+        <div class="full-width-section">
+          <h3>Ⅵ. NETWORK &amp; CASE STUDY (22-28p)</h3>
+          <p>전국 운영 네트워크와 성공 사례를 제시합니다.</p>
+        </div>
+
+        <!-- p22 Nationwide Overview -->
+        <div class="page-plan">
+          <div class="page-plan-header"><h3>전국 사업장 — 개요</h3><span class="page-number">p.22</span></div>
+          <div class="plan-section"><h5>③ 문구 초안</h5>
+            <p>로지션은 전국 다수의 물류센터를 운영하며 권역별 특성에 맞춘 운영 역량을 갖추고 있습니다.</p>
+          </div>
+          <div class="plan-section"><h5>④ 디자인</h5>
+            <p>전국 지도 + 권역별 카드형 요약.</p>
+          </div>
+        </div>
+
+        <!-- p23 Capital Area -->
+        <div class="page-plan">
+          <div class="page-plan-header"><h3>수도권 권역</h3><span class="page-number">p.23</span></div>
+          <div class="plan-section"><h5>③ 문구 초안</h5>
+            <ul>
+              <li>대형 유통·식품·리테일 중심 센터 운영</li>
+              <li>자동화 설비(PAS/DPS) 기반 고속 처리</li>
+              <li>반품/폐기센터 및 중형센터 혼재 운영</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- p24 Central/Yeongnam -->
+        <div class="page-plan">
+          <div class="page-plan-header"><h3>중부·영남 권역</h3><span class="page-number">p.24</span></div>
+          <div class="plan-section"><h5>③ 문구 초안</h5>
+            <ul>
+              <li>식자재·의류·생활용품 중심 운영</li>
+              <li>Seasonal 물량 대응 업력</li>
+              <li>지역 기반 인력망 확보</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- p25 Jeju/Others -->
+        <div class="page-plan">
+          <div class="page-plan-header"><h3>제주·기타 권역</h3><span class="page-number">p.25</span></div>
+          <div class="plan-section"><h5>③ 문구 초안</h5>
+            <ul>
+              <li>지역 소매·관광업 공급망 대응</li>
+              <li>콜드체인·혼합품목 처리 노하우 보유</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- p26 Case Study 1 -->
+        <div class="page-plan">
+          <div class="page-plan-header"><h3>Case Study ① — 생산성 개선</h3><span class="page-number">p.26</span></div>
+          <div class="plan-section"><h5>③ 문구 초안</h5>
+            <p><strong>고객사 A센터: 피킹 생산성 23% 향상</strong></p>
+            <ul>
+              <li>표준작업 동선 재설계</li>
+              <li>PAS 활용률 개선</li>
+              <li>신규인력 교육 강화</li>
+            </ul>
+          </div>
+          <div class="plan-section"><h5>④ 디자인</h5>
+            <p>정량 성과 숫자 크게, Before/After 구조.</p>
+          </div>
+        </div>
+
+        <!-- p27 Case Study 2 -->
+        <div class="page-plan">
+          <div class="page-plan-header"><h3>Case Study ② — 반품센터 리드타임 개선</h3><span class="page-number">p.27</span></div>
+          <div class="plan-section"><h5>③ 문구 초안</h5>
+            <p><strong>반품 처리 리드타임 32% 단축</strong></p>
+            <ul>
+              <li>반품 분류 체계 개선</li>
+              <li>작업자 배치 최적화</li>
+              <li>폐기·기부 프로세스 자동화 수준 상향</li>
+            </ul>
+          </div>
+          <div class="plan-section"><h5>④ 디자인</h5>
+            <p>정량 성과 숫자 크게, 개선 프로세스 3-step.</p>
+          </div>
+        </div>
+
+        <!-- p28 References -->
+        <div class="page-plan">
+          <div class="page-plan-header"><h3>고객 Reference</h3><span class="page-number">p.28</span></div>
+          <div class="plan-section"><h5>③ 문구 초안</h5>
+            <ul>
+              <li>주요 고객군 중심 레퍼런스 다수 보유</li>
+              <li>업종별 레퍼런스 다양</li>
+              <li>장기간 협업 기반 신뢰 확보</li>
+            </ul>
+          </div>
+          <div class="plan-section"><h5>④ 디자인</h5>
+            <p>고객 로고 월 형태 + 업종별 분류 태그.</p>
+          </div>
+        </div>
+
+        <!-- VII. CLOSING -->
+        <div class="full-width-section">
+          <h3>Ⅶ. CLOSING (29p)</h3>
+          <p>핵심 가치를 상기시키며 파트너십 메시지로 마무리합니다.</p>
+        </div>
+
+        <!-- p29 Closing -->
+        <div class="page-plan">
+          <div class="page-plan-header"><h3>Closing</h3><span class="page-number">p.29</span></div>
+          <div class="plan-section"><h5>③ 문구 초안</h5>
+            <p>로지션은 운영 품질·안전·안정성을 기반으로 고객사의 공급망 운영 가치를 함께 만들어가는 파트너입니다.</p>
+            <p><strong>문의</strong><br/>Tel. 031-377-1751<br/>E-mail. info@logisian.com</p>
+            <p><strong>Your Best Logistics Operation Partner</strong></p>
+          </div>
+          <div class="plan-section"><h5>④ 디자인</h5>
+            <p>커버와 동일 톤. 중앙 문구 + 하단 연락처.</p>
+          </div>
+        </div>
+
+      </section>
+    </main>
+  </div>
+</body>
+</html>
