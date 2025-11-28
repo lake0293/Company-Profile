@@ -1,0 +1,2640 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>에이블링크 | 장애인 생산품 B2B 중개 플랫폼 사업기획서</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Pretendard:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1B4D3E;
+            --primary-light: #2D7A5F;
+            --primary-dark: #0D2820;
+            --accent: #F4A261;
+            --accent-light: #FFD4A3;
+            --secondary: #264653;
+            --background: #FAFBF9;
+            --text-dark: #1A1A1A;
+            --text-muted: #6B7280;
+            --white: #FFFFFF;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --danger: #EF4444;
+            --gradient-primary: linear-gradient(135deg, #1B4D3E 0%, #2D7A5F 100%);
+            --gradient-warm: linear-gradient(135deg, #F4A261 0%, #E76F51 100%);
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+            background-color: var(--background);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1B4D3E 0%, #264653 50%, #1B4D3E 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text h1 span {
+            background: var(--gradient-warm);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+
+        .badge {
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 50px;
+            color: white;
+            font-size: 0.875rem;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+        }
+
+        .badge i {
+            margin-right: 0.5rem;
+            color: var(--accent);
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 20px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .stat-card .number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1;
+        }
+
+        .stat-card .label {
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.8);
+            margin-top: 0.5rem;
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .hero-card {
+            background: white;
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: var(--shadow-xl);
+            transform: rotate(-2deg);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: rotate(-2deg) translateY(0); }
+            50% { transform: rotate(-2deg) translateY(-20px); }
+        }
+
+        .hero-card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-card-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .hero-card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .hero-card-subtitle {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .hero-card-flow {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 2rem 0;
+        }
+
+        .flow-step {
+            text-align: center;
+            flex: 1;
+        }
+
+        .flow-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 0.75rem;
+            background: var(--background);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .flow-label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .flow-arrow {
+            color: var(--accent);
+            font-size: 1.5rem;
+        }
+
+        .hero-card-bottom {
+            background: var(--background);
+            border-radius: 16px;
+            padding: 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .savings-label {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .savings-amount {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--success);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 6rem 2rem;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 0.5rem 1.25rem;
+            background: rgba(27, 77, 62, 0.1);
+            color: var(--primary);
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-desc {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            background: linear-gradient(180deg, var(--background) 0%, #E8F0ED 100%);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .problem-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            border-left: 4px solid var(--danger);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .problem-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(239, 68, 68, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--danger);
+            margin-bottom: 1rem;
+        }
+
+        .problem-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+
+        .problem-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Solution Section */
+        .solution-section {
+            background: var(--primary-dark);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .solution-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(244, 162, 97, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .solution-section .section-tag {
+            background: rgba(244, 162, 97, 0.2);
+            color: var(--accent);
+        }
+
+        .solution-section .section-title {
+            color: white;
+        }
+
+        .solution-section .section-desc {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .solution-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .solution-step {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            min-width: 180px;
+        }
+
+        .solution-step-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            background: var(--gradient-warm);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .solution-step h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .solution-step p {
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .solution-arrow {
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        /* Legal Section */
+        .legal-section {
+            background: white;
+        }
+
+        .legal-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .legal-info {
+            background: var(--background);
+            border-radius: 24px;
+            padding: 2.5rem;
+        }
+
+        .legal-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .legal-title i {
+            color: var(--primary);
+        }
+
+        .legal-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .legal-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .legal-item-icon {
+            width: 32px;
+            height: 32px;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--success);
+            flex-shrink: 0;
+        }
+
+        .legal-item-text {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        .legal-item-text strong {
+            display: block;
+            margin-bottom: 0.25rem;
+            color: var(--primary);
+        }
+
+        .legal-warning {
+            background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .legal-warning-title {
+            font-weight: 700;
+            color: #92400E;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .legal-warning p {
+            font-size: 0.9rem;
+            color: #78350F;
+        }
+
+        .legal-structure {
+            background: var(--primary);
+            border-radius: 24px;
+            padding: 2.5rem;
+            color: white;
+        }
+
+        .structure-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .structure-diagram {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .structure-box {
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-align: center;
+        }
+
+        .structure-box.highlight {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .structure-box h5 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .structure-box p {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        .structure-arrow-down {
+            text-align: center;
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Features Section */
+        .features-section {
+            background: linear-gradient(180deg, white 0%, var(--background) 100%);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            font-size: 0.875rem;
+            color: var(--text-dark);
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #F3F4F6;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-list li i {
+            color: var(--success);
+            font-size: 0.75rem;
+        }
+
+        /* Market Section */
+        .market-section {
+            background: var(--background);
+        }
+
+        .market-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .market-card {
+            background: white;
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .market-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .market-card h3 i {
+            color: var(--primary);
+        }
+
+        .market-stat {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid #F3F4F6;
+        }
+
+        .market-stat:last-child {
+            border-bottom: none;
+        }
+
+        .market-stat-label {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .market-stat-value {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .market-stat-value.highlight {
+            color: var(--accent);
+        }
+
+        .competitor-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .competitor-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--background);
+            border-radius: 12px;
+            flex-wrap: nowrap;
+        }
+
+        .competitor-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .competitor-logo {
+            min-width: 60px;
+            width: 60px;
+            height: 48px;
+            background: var(--primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 0.75rem;
+            flex-shrink: 0;
+            text-align: center;
+            line-height: 1.2;
+            padding: 0.25rem;
+        }
+
+        .competitor-info h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .competitor-info p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .competitor-gap {
+            margin-left: auto;
+            padding: 0.25rem 0.75rem;
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--danger);
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        /* Revenue Section */
+        .revenue-section {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary-dark) 100%);
+            color: white;
+        }
+
+        .revenue-section .section-tag {
+            background: rgba(244, 162, 97, 0.2);
+            color: var(--accent);
+        }
+
+        .revenue-section .section-title {
+            color: white;
+        }
+
+        .revenue-section .section-desc {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .revenue-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .revenue-card {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
+        }
+
+        .revenue-card:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-5px);
+        }
+
+        .revenue-card-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1.5rem;
+            background: var(--gradient-warm);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .revenue-card h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: white;
+        }
+
+        .revenue-card p {
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 1rem;
+        }
+
+        .revenue-card .rate {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        /* Roadmap Section */
+        .roadmap-section {
+            background: white;
+        }
+
+        .roadmap-timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .roadmap-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, var(--primary) 0%, var(--accent) 100%);
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .roadmap-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: calc(50% + 40px);
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .roadmap-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: calc(50% + 40px);
+        }
+
+        .roadmap-content {
+            background: var(--background);
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 400px;
+            position: relative;
+            box-shadow: var(--shadow-md);
+        }
+
+        .roadmap-dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border: 4px solid white;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            box-shadow: var(--shadow-md);
+        }
+
+        .roadmap-item:nth-child(odd) .roadmap-dot {
+            right: calc(-40px - 10px);
+        }
+
+        .roadmap-item:nth-child(even) .roadmap-dot {
+            left: calc(-40px - 10px);
+        }
+
+        .roadmap-phase {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .roadmap-content h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+
+        .roadmap-content p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .roadmap-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .roadmap-tag {
+            padding: 0.25rem 0.75rem;
+            background: white;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        /* Risk Section */
+        .risk-section {
+            background: var(--background);
+        }
+
+        .risk-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .risk-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .risk-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .risk-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(245, 158, 11, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--warning);
+        }
+
+        .risk-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .risk-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .risk-solution {
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 12px;
+            padding: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .risk-solution i {
+            color: var(--success);
+            font-size: 1.25rem;
+            margin-top: 0.1rem;
+        }
+
+        .risk-solution span {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--gradient-primary);
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(244, 162, 97, 0.1) 0%, transparent 50%);
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta-desc {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-highlights {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-highlight {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: white;
+        }
+
+        .cta-highlight i {
+            width: 32px;
+            height: 32px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #E76F51;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.15);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.25);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .footer-links h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-badges {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                display: none;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .revenue-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .legal-content {
+                grid-template-columns: 1fr;
+            }
+
+            .market-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-text h1 {
+                font-size: 1.75rem;
+                word-break: keep-all;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+                word-break: keep-all;
+            }
+
+            .section-desc {
+                font-size: 1rem;
+            }
+
+            .problem-grid,
+            .features-grid,
+            .risk-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .revenue-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .solution-flow {
+                flex-direction: column;
+            }
+
+            .solution-arrow {
+                transform: rotate(90deg);
+            }
+
+            .roadmap-timeline::before {
+                left: 20px;
+            }
+
+            .roadmap-item,
+            .roadmap-item:nth-child(even) {
+                padding-left: 60px;
+                padding-right: 0;
+                justify-content: flex-start;
+            }
+
+            .roadmap-item .roadmap-dot,
+            .roadmap-item:nth-child(even) .roadmap-dot {
+                left: 10px;
+                right: auto;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            /* 인라인 그리드 모바일 대응 */
+            .section-container > div[style*="grid-template-columns: 1fr 1fr"],
+            .section-container > div[style*="grid-template-columns: repeat(2"],
+            .section-container > div[style*="grid-template-columns: repeat(3"],
+            .section-container > div[style*="grid-template-columns: repeat(4"],
+            .section-container div[style*="grid-template-columns: 1fr 1fr"],
+            .section-container div[style*="grid-template-columns: repeat("] {
+                grid-template-columns: 1fr !important;
+            }
+
+            /* 제도 안내 섹션 모바일 */
+            .info-section [style*="grid-template-columns"] {
+                grid-template-columns: 1fr !important;
+            }
+
+            /* 차별화 포인트 모바일 */
+            .differentiation [style*="grid-template-columns"] {
+                grid-template-columns: 1fr !important;
+            }
+
+            /* 수익 모델 섹션 모바일 */
+            .revenue-section [style*="grid-template-columns: 1fr auto 1fr"] {
+                grid-template-columns: 1fr !important;
+                gap: 0.5rem !important;
+            }
+
+            .revenue-section [style*="grid-template-columns: repeat(3"],
+            .revenue-section [style*="grid-template-columns: repeat(4"] {
+                grid-template-columns: 1fr !important;
+            }
+
+            /* 테이블 모바일 대응 */
+            table {
+                font-size: 0.85rem;
+            }
+
+            table th, table td {
+                padding: 0.75rem 0.5rem !important;
+            }
+
+            /* 요금제 카드 모바일 */
+            .revenue-section div[style*="grid-template-columns: repeat(3, 1fr)"] {
+                grid-template-columns: 1fr !important;
+            }
+
+            .revenue-section div[style*="transform: scale(1.02)"] {
+                transform: none !important;
+            }
+
+            /* 경쟁사 비교 모바일 */
+            .competitor-item {
+                flex-wrap: wrap;
+                gap: 0.75rem;
+            }
+
+            .competitor-info {
+                flex: 1 1 auto;
+                min-width: 120px;
+            }
+
+            .competitor-gap {
+                width: 100%;
+                text-align: center;
+                margin-left: 0;
+            }
+
+            /* 플로우 다이어그램 모바일 */
+            div[style*="grid-template-columns: 1fr auto 1fr auto 1fr"] {
+                grid-template-columns: 1fr !important;
+                text-align: center;
+            }
+
+            div[style*="grid-template-columns: 1fr auto 1fr auto 1fr"] > i {
+                transform: rotate(90deg);
+                margin: 0.5rem auto;
+            }
+
+            /* CTA 버튼 모바일 */
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-highlights {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            /* 히어로 통계 모바일 */
+            .hero-stats {
+                gap: 1rem;
+            }
+
+            .stat-card {
+                padding: 1rem;
+            }
+
+            .stat-card .number {
+                font-size: 1.5rem;
+            }
+
+            /* 매출 시뮬레이션 모바일 */
+            .revenue-section div[style*="grid-template-columns: 1fr 1fr"][style*="gap: 2rem"] {
+                grid-template-columns: 1fr !important;
+            }
+
+            /* 핵심 포인트 4열 → 2열 */
+            .fade-in[style*="grid-template-columns: repeat(4, 1fr)"] {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.25rem;
+            }
+
+            .hero-badges {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .badge {
+                font-size: 0.75rem;
+            }
+
+            /* 아주 작은 화면에서 2열도 1열로 */
+            .fade-in[style*="grid-template-columns: repeat(4, 1fr)"],
+            div[style*="grid-template-columns: repeat(4, 1fr)"] {
+                grid-template-columns: 1fr !important;
+            }
+
+            /* 테이블 가로 스크롤 */
+            div[style*="overflow-x: auto"] {
+                margin: 0 -1rem;
+                padding: 0 1rem;
+            }
+
+            table {
+                font-size: 0.8rem;
+                min-width: 500px;
+            }
+
+            /* 로고 박스 모바일 */
+            .competitor-logo {
+                min-width: 50px !important;
+                width: 50px !important;
+                height: 40px !important;
+                font-size: 0.65rem !important;
+            }
+        }
+
+        /* 차별화 그리드 모바일 */
+        @media (max-width: 768px) {
+            .diff-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+
+            .diff-item {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                text-align: left !important;
+                padding: 1rem !important;
+                background: var(--background);
+                border-radius: 12px;
+                gap: 1rem;
+            }
+
+            .diff-item > div:first-child {
+                flex-shrink: 0;
+                width: 50px !important;
+                height: 50px !important;
+                margin: 0 !important;
+            }
+
+            .diff-item h4 {
+                margin-bottom: 0.25rem !important;
+            }
+
+            .diff-item p {
+                margin: 0;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <div class="nav-logo-icon">
+                    <i class="fas fa-link"></i>
+                </div>
+                에이블링크
+            </a>
+            <ul class="nav-links">
+                <li><a href="#info">제도 안내</a></li>
+                <li><a href="#problem">문제 정의</a></li>
+                <li><a href="#solution">솔루션</a></li>
+                <li><a href="#features">핵심 기능</a></li>
+                <li><a href="#market">시장 분석</a></li>
+                <li><a href="#revenue">수익 모델</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badges">
+                    <span class="badge"><i class="fas fa-shield-alt"></i>법적 검증 완료</span>
+                    <span class="badge"><i class="fas fa-chart-line"></i>시장 선점 기회</span>
+                    <span class="badge"><i class="fas fa-heart"></i>사회적 가치</span>
+                </div>
+                <h1>
+                    장애인 고용부담금 감면을 위한<br>
+                    <span>다품목 통합 중개 플랫폼</span>
+                </h1>
+                <p class="subtitle">
+                    여러 생산시설 제품을 장바구니처럼 담아 주문하고,<br>
+                    1년 계약 기간 내 수시 발주 — 증빙은 플랫폼이 통합 관리합니다.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <div class="number">7,896억</div>
+                        <div class="label">2024년 우선구매 실적</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">790+</div>
+                        <div class="label">중증장애인 생산시설</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">50%</div>
+                        <div class="label">최대 감면 혜택</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <div class="hero-card-header">
+                        <div class="hero-card-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <div>
+                            <div class="hero-card-title">연계고용 감면 프로세스</div>
+                            <div class="hero-card-subtitle">에이블링크가 자동화합니다</div>
+                        </div>
+                    </div>
+                    <div class="hero-card-flow">
+                        <div class="flow-step">
+                            <div class="flow-icon"><i class="fas fa-building"></i></div>
+                            <div class="flow-label">기업</div>
+                        </div>
+                        <i class="fas fa-arrow-right flow-arrow"></i>
+                        <div class="flow-step">
+                            <div class="flow-icon"><i class="fas fa-link"></i></div>
+                            <div class="flow-label">에이블링크</div>
+                        </div>
+                        <i class="fas fa-arrow-right flow-arrow"></i>
+                        <div class="flow-step">
+                            <div class="flow-icon"><i class="fas fa-hands-helping"></i></div>
+                            <div class="flow-label">생산시설</div>
+                        </div>
+                    </div>
+                    <div class="hero-card-bottom">
+                        <div>
+                            <div class="savings-label">예상 부담금 감면액</div>
+                            <div class="savings-amount">최대 90% 절감</div>
+                        </div>
+                        <i class="fas fa-calculator" style="font-size: 2rem; color: var(--primary);"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 제도 설명 섹션 (신규 추가) -->
+    <section class="section info-section" id="info" style="background: linear-gradient(180deg, #F8FAF9 0%, white 100%);">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <span class="section-tag">알아두세요</span>
+                <h2 class="section-title">장애인 고용부담금, 왜 발생하나요?</h2>
+                <p class="section-desc">
+                    직접 고용이 어렵다면, 연계고용 감면제도를 활용할 수 있습니다
+                </p>
+            </div>
+            
+            <!-- 제도 설명 카드 -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem;">
+                <!-- 부담금 발생 조건 -->
+                <div class="fade-in" style="background: white; border-radius: 20px; padding: 2rem; box-shadow: var(--shadow-lg);">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div style="width: 50px; height: 50px; background: rgba(239,68,68,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-exclamation-circle" style="font-size: 1.5rem; color: #EF4444;"></i>
+                        </div>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-dark);">언제 부담금이 발생하나요?</h3>
+                    </div>
+                    <div style="background: #FEF2F2; border-radius: 12px; padding: 1.25rem; margin-bottom: 1.5rem;">
+                        <p style="font-size: 1rem; color: #991B1B; font-weight: 600; margin-bottom: 0.5rem;">
+                            <i class="fas fa-building" style="margin-right: 0.5rem;"></i>
+                            상시 근로자 100명 이상 사업장
+                        </p>
+                        <p style="font-size: 0.9rem; color: #7F1D1D;">
+                            장애인 의무고용률(민간 3.1%)을 충족하지 못하면 부담금 발생
+                        </p>
+                    </div>
+                    <ul style="list-style: none; font-size: 0.95rem; color: var(--text-dark);">
+                        <li style="padding: 0.75rem 0; border-bottom: 1px solid #F3F4F6; display: flex; justify-content: space-between;">
+                            <span>2025년 부담기초액</span>
+                            <strong style="color: var(--danger);">월 1,377,000원/명</strong>
+                        </li>
+                        <li style="padding: 0.75rem 0; border-bottom: 1px solid #F3F4F6; display: flex; justify-content: space-between;">
+                            <span>장애인 1명도 없으면</span>
+                            <strong style="color: var(--danger);">월 1,922,540원/명</strong>
+                        </li>
+                        <li style="padding: 0.75rem 0; display: flex; justify-content: space-between;">
+                            <span>예: 200명 사업장, 0명 고용</span>
+                            <strong style="color: var(--danger);">연 약 1.4억원</strong>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- 직접 고용이 어려운 경우 -->
+                <div class="fade-in" style="background: white; border-radius: 20px; padding: 2rem; box-shadow: var(--shadow-lg);">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div style="width: 50px; height: 50px; background: rgba(16,185,129,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-lightbulb" style="font-size: 1.5rem; color: #10B981;"></i>
+                        </div>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-dark);">직접 고용이 어렵다면?</h3>
+                    </div>
+                    <div style="background: rgba(16,185,129,0.08); border-radius: 12px; padding: 1.25rem; margin-bottom: 1.5rem;">
+                        <p style="font-size: 1rem; color: #065F46; font-weight: 600; margin-bottom: 0.5rem;">
+                            <i class="fas fa-handshake" style="margin-right: 0.5rem;"></i>
+                            연계고용 부담금 감면제도
+                        </p>
+                        <p style="font-size: 0.9rem; color: #047857;">
+                            장애인 생산시설에서 제품을 구매하면 부담금의 최대 90%까지 감면
+                        </p>
+                    </div>
+                    <ul style="list-style: none; font-size: 0.95rem; color: var(--text-dark);">
+                        <li style="padding: 0.75rem 0; border-bottom: 1px solid #F3F4F6;">
+                            <i class="fas fa-check" style="color: var(--success); margin-right: 0.75rem;"></i>
+                            건설, 제조 등 <strong>육체적 업무</strong>로 직접 고용이 어려운 경우
+                        </li>
+                        <li style="padding: 0.75rem 0; border-bottom: 1px solid #F3F4F6;">
+                            <i class="fas fa-check" style="color: var(--success); margin-right: 0.75rem;"></i>
+                            사업장 환경상 <strong>편의시설 구축이 어려운</strong> 경우
+                        </li>
+                        <li style="padding: 0.75rem 0;">
+                            <i class="fas fa-check" style="color: var(--success); margin-right: 0.75rem;"></i>
+                            적합한 <strong>직무 개발이 어려운</strong> 경우
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 장애인 생산품 구매의 추가 혜택 -->
+            <div class="fade-in" style="background: var(--gradient-primary); border-radius: 24px; padding: 2.5rem; color: white;">
+                <h3 style="font-size: 1.5rem; font-weight: 700; text-align: center; margin-bottom: 2rem;">
+                    <i class="fas fa-gift" style="margin-right: 0.75rem;"></i>
+                    부담금 감면 외에도, 장애인 생산품 구매의 이점
+                </h3>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
+                    <div style="text-align: center; padding: 1.5rem; background: rgba(255,255,255,0.15); border-radius: 16px; backdrop-filter: blur(10px);">
+                        <div style="width: 60px; height: 60px; background: rgba(255,255,255,0.2); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-leaf" style="font-size: 1.5rem; color: white;"></i>
+                        </div>
+                        <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: white;">ESG 경영 실천</h4>
+                        <p style="font-size: 0.85rem; color: rgba(255,255,255,0.85);">사회적 책임 이행<br>지속가능경영 보고서 반영</p>
+                    </div>
+                    <div style="text-align: center; padding: 1.5rem; background: rgba(255,255,255,0.15); border-radius: 16px; backdrop-filter: blur(10px);">
+                        <div style="width: 60px; height: 60px; background: rgba(255,255,255,0.2); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-award" style="font-size: 1.5rem; color: white;"></i>
+                        </div>
+                        <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: white;">기업 이미지 제고</h4>
+                        <p style="font-size: 0.85rem; color: rgba(255,255,255,0.85);">사회공헌 활동으로<br>긍정적 브랜드 이미지</p>
+                    </div>
+                    <div style="text-align: center; padding: 1.5rem; background: rgba(255,255,255,0.15); border-radius: 16px; backdrop-filter: blur(10px);">
+                        <div style="width: 60px; height: 60px; background: rgba(255,255,255,0.2); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-file-contract" style="font-size: 1.5rem; color: white;"></i>
+                        </div>
+                        <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: white;">공공입찰 가점</h4>
+                        <p style="font-size: 0.85rem; color: rgba(255,255,255,0.85);">사회적 기업 제품 구매<br>실적으로 입찰 시 가점</p>
+                    </div>
+                    <div style="text-align: center; padding: 1.5rem; background: rgba(255,255,255,0.15); border-radius: 16px; backdrop-filter: blur(10px);">
+                        <div style="width: 60px; height: 60px; background: rgba(255,255,255,0.2); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-heart" style="font-size: 1.5rem; color: white;"></i>
+                        </div>
+                        <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: white;">사회적 가치 창출</h4>
+                        <p style="font-size: 0.85rem; color: rgba(255,255,255,0.85);">장애인 일자리 창출<br>자립 지원에 기여</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="section problem-section" id="problem">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <span class="section-tag">Problem</span>
+                <h2 class="section-title">시장이 직면한 핵심 문제</h2>
+                <p class="section-desc">
+                    장애인 의무고용 제도는 있지만, 직접 고용이 어려운 기업과
+                    판로가 부족한 장애인 생산시설 모두가 어려움을 겪고 있습니다.
+                </p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card fade-in">
+                    <div class="problem-icon"><i class="fas fa-puzzle-piece"></i></div>
+                    <h3>한 곳에서 다양한 품목 계약이 어렵다</h3>
+                    <p>생산시설마다 취급 품목이 제한적이라 인쇄물, 사무용품, 선물세트 등 다양한 품목을 구매하려면 여러 곳과 개별 계약을 맺어야 합니다.</p>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="problem-icon"><i class="fas fa-copy"></i></div>
+                    <h3>복수 계약 관리의 번거로움</h3>
+                    <p>각 시설별로 1년 도급계약서 작성, 발주 관리, 세금계산서 수령, 감면 증빙을 따로 해야 해서 관리 부담이 큽니다.</p>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="problem-icon"><i class="fas fa-file-alt"></i></div>
+                    <h3>복잡한 감면 계산 및 서류 절차</h3>
+                    <p>연계고용 감면 계산 공식이 복잡하고, 증빙 서류 준비와 제출 과정에서 실수가 발생하기 쉽습니다.</p>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="problem-icon"><i class="fas fa-store-slash"></i></div>
+                    <h3>장애인 생산시설의 판로 부족</h3>
+                    <p>790개 이상의 생산시설이 있지만, 기업과의 연결 채널이 부족하여 안정적인 판매가 어렵습니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="section solution-section" id="solution">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <span class="section-tag">Solution</span>
+                <h2 class="section-title">에이블링크의 솔루션</h2>
+                <p class="section-desc">
+                    여러 생산시설 제품을 <strong>장바구니처럼 담아 일괄 주문</strong>하고,<br>
+                    세금계산서는 각 시설별로 직접 발행 — <strong>증빙은 플랫폼이 통합 관리</strong>
+                </p>
+            </div>
+            <div class="solution-flow">
+                <div class="solution-step fade-in">
+                    <div class="solution-step-icon"><i class="fas fa-calculator"></i></div>
+                    <h4>감면 시뮬레이션</h4>
+                    <p>부담금/구매액/감면액<br>자동 계산</p>
+                </div>
+                <i class="fas fa-chevron-right solution-arrow"></i>
+                <div class="solution-step fade-in">
+                    <div class="solution-step-icon"><i class="fas fa-search"></i></div>
+                    <h4>제품 탐색</h4>
+                    <p>감면 대상 제품<br>카탈로그 검색</p>
+                </div>
+                <i class="fas fa-chevron-right solution-arrow"></i>
+                <div class="solution-step fade-in">
+                    <div class="solution-step-icon"><i class="fas fa-handshake"></i></div>
+                    <h4>계약 체결</h4>
+                    <p>연계고용 도급계약<br>자동 생성</p>
+                </div>
+                <i class="fas fa-chevron-right solution-arrow"></i>
+                <div class="solution-step fade-in">
+                    <div class="solution-step-icon"><i class="fas fa-credit-card"></i></div>
+                    <h4>결제 정산</h4>
+                    <p>B2B 결제 및<br>세금계산서 연동</p>
+                </div>
+                <i class="fas fa-chevron-right solution-arrow"></i>
+                <div class="solution-step fade-in">
+                    <div class="solution-step-icon"><i class="fas fa-file-invoice"></i></div>
+                    <h4>증빙 자동화</h4>
+                    <p>감면 신청 서류<br>자동 생성</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legal Section -->
+    <section class="section legal-section" id="legal">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <span class="section-tag">Legal Review</span>
+                <h2 class="section-title">법적·제도적 검토</h2>
+                <p class="section-desc">
+                    「장애인고용촉진 및 직업재활법」에 근거한 적법한 사업 구조
+                </p>
+            </div>
+            <div class="legal-content">
+                <div class="legal-info fade-in">
+                    <h3 class="legal-title">
+                        <i class="fas fa-balance-scale"></i>
+                        연계고용 부담금 감면제도 요약
+                    </h3>
+                    <div class="legal-item">
+                        <div class="legal-item-icon"><i class="fas fa-check"></i></div>
+                        <div class="legal-item-text">
+                            <strong>법적 근거</strong>
+                            「장애인고용촉진 및 직업재활법」 제33조 제4항 및 제11항
+                        </div>
+                    </div>
+                    <div class="legal-item">
+                        <div class="legal-item-icon"><i class="fas fa-check"></i></div>
+                        <div class="legal-item-text">
+                            <strong>감면 대상</strong>
+                            장애인 직업재활시설 또는 표준사업장에 도급을 주어 생산품을 납품받는 경우
+                        </div>
+                    </div>
+                    <div class="legal-item">
+                        <div class="legal-item-icon"><i class="fas fa-check"></i></div>
+                        <div class="legal-item-text">
+                            <strong>감면 한도</strong>
+                            연간 부담금의 90% 이내, 도급액의 50%를 초과할 수 없음
+                        </div>
+                    </div>
+                    <div class="legal-item">
+                        <div class="legal-item-icon"><i class="fas fa-check"></i></div>
+                        <div class="legal-item-text">
+                            <strong>계약 요건</strong>
+                            1년 이상 도급계약 체결 후, 계약 기간 내 수시 발주·납품 가능 (단가계약 방식)
+                        </div>
+                    </div>
+                    <div class="legal-warning">
+                        <div class="legal-warning-title">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            하도급 제한 사항
+                        </div>
+                        <p>연계고용 대상 사업장이 다른 사업장과 하도급 계약을 하여 도급계약을 이행한 경우에는 부담금 감면 대상에서 제외됩니다.</p>
+                    </div>
+                </div>
+                <div class="legal-structure fade-in">
+                    <div class="structure-title">플랫폼 법적 구조</div>
+                    <div class="structure-diagram">
+                        <div class="structure-box">
+                            <h5>🏢 기업 (구매자)</h5>
+                            <p>부담금 납부 의무 사업주</p>
+                        </div>
+                        <div class="structure-arrow-down"><i class="fas fa-arrow-down"></i></div>
+                        <div class="structure-box highlight">
+                            <h5>🔗 에이블링크 (중개자)</h5>
+                            <p>중개·증빙·정산 대행<br>판매자 역할 X</p>
+                        </div>
+                        <div class="structure-arrow-down"><i class="fas fa-arrow-down"></i></div>
+                        <div class="structure-box">
+                            <h5>🏭 장애인 생산시설 (판매자)</h5>
+                            <p>세금계산서 직접 발행<br>직접 납품 이행</p>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(255,255,255,0.1); border-radius: 12px;">
+                        <p style="font-size: 0.85rem; text-align: center;">
+                            <i class="fas fa-check-circle" style="color: #10B981;"></i>
+                            전자상거래법·장애인고용촉진법 모두 적법
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features-section" id="features">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <span class="section-tag">Features</span>
+                <h2 class="section-title">플랫폼 핵심 기능</h2>
+                <p class="section-desc">
+                    기업과 장애인 생산시설 모두를 위한 종합 솔루션
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon"><i class="fas fa-calculator"></i></div>
+                    <h3>감면 계산기 자동화</h3>
+                    <p>구매 전 감면 예상 금액을 자동 계산하여 최적의 구매 결정을 지원합니다.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i>부담금 → 구매액 → 감면액 시뮬레이션</li>
+                        <li><i class="fas fa-check-circle"></i>의무고용률 기반 자동 계산</li>
+                        <li><i class="fas fa-check-circle"></i>연간 최적 구매 금액 추천</li>
+                    </ul>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon"><i class="fas fa-boxes"></i></div>
+                    <h3>감면 대상 제품 카탈로그</h3>
+                    <p>전국 790+ 생산시설의 제품을 한눈에 검색하고 비교할 수 있습니다.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i>품질, 인증, 생산능력 비교</li>
+                        <li><i class="fas fa-check-circle"></i>납기일 및 재고 실시간 확인</li>
+                        <li><i class="fas fa-check-circle"></i>카테고리별/지역별 필터링</li>
+                    </ul>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon"><i class="fas fa-file-contract"></i></div>
+                    <h3>복수 시설 일괄 계약</h3>
+                    <p>여러 생산시설과의 1년 도급계약을 한 번에 체결하고 통합 관리합니다.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i>장바구니 → 복수 시설 동시 계약</li>
+                        <li><i class="fas fa-check-circle"></i>계약서 자동 생성 (법적 필수사항 포함)</li>
+                        <li><i class="fas fa-check-circle"></i>계약 기간 내 수시 발주 가능</li>
+                    </ul>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon"><i class="fas fa-credit-card"></i></div>
+                    <h3>B2B 결제/정산</h3>
+                    <p>대량 구매부터 정기 구매까지 다양한 결제 방식을 지원합니다.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i>세금계산서 자동 연동</li>
+                        <li><i class="fas fa-check-circle"></i>대량/반복 구매 기능</li>
+                        <li><i class="fas fa-check-circle"></i>정기 결제 일정 관리</li>
+                    </ul>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon"><i class="fas fa-file-invoice"></i></div>
+                    <h3>감면 증빙 자동화</h3>
+                    <p>부담금 감면 신청에 필요한 모든 서류를 자동으로 생성합니다.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i>구매 내역 자동 정리</li>
+                        <li><i class="fas fa-check-circle"></i>생산시설 인증·장애인 고용률 확인</li>
+                        <li><i class="fas fa-check-circle"></i>제출용 PDF 원클릭 생성</li>
+                    </ul>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+                    <h3>ESG 리포트 자동 생성</h3>
+                    <p>기업 ESG 보고서에 바로 활용 가능한 구매 리포트를 제공합니다.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i>사회공헌 실적 자동 집계</li>
+                        <li><i class="fas fa-check-circle"></i>장애인 고용 기여도 시각화</li>
+                        <li><i class="fas fa-check-circle"></i>다운로드 가능한 보고서 양식</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Section -->
+    <section class="section market-section" id="market">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <span class="section-tag">Market Analysis</span>
+                <h2 class="section-title">시장 분석</h2>
+                <p class="section-desc">
+                    기존 플레이어들은 "단일 품목 직접 생산·영업" — 우리는 <strong>"다품목 통합 중개"</strong>
+                </p>
+            </div>
+            <div class="market-grid">
+                <div class="market-card fade-in">
+                    <h3><i class="fas fa-chart-pie"></i> 시장 규모</h3>
+                    <div class="market-stat">
+                        <span class="market-stat-label">장애인 고용부담금 시장</span>
+                        <span class="market-stat-value">약 1조 원/연</span>
+                    </div>
+                    <div class="market-stat">
+                        <span class="market-stat-label">2024년 우선구매 실적</span>
+                        <span class="market-stat-value highlight">7,896억 원</span>
+                    </div>
+                    <div class="market-stat">
+                        <span class="market-stat-label">표준사업장 수</span>
+                        <span class="market-stat-value">652개소</span>
+                    </div>
+                    <div class="market-stat">
+                        <span class="market-stat-label">직업재활시설 수</span>
+                        <span class="market-stat-value">790개소</span>
+                    </div>
+                    <div class="market-stat">
+                        <span class="market-stat-label">부담금 납부 대상 기업</span>
+                        <span class="market-stat-value">100인+ 사업장</span>
+                    </div>
+                </div>
+                <div class="market-card fade-in">
+                    <h3><i class="fas fa-users"></i> 경쟁 현황 및 차별화</h3>
+                    <div class="competitor-list">
+                        <div class="competitor-item">
+                            <div class="competitor-logo" style="background: #4A7C59;">베어베터</div>
+                            <div class="competitor-info">
+                                <h4>표준사업장 (직접 생산)</h4>
+                                <p>연매출 147억, 600개사 파트너</p>
+                            </div>
+                            <span class="competitor-gap">자체 품목만</span>
+                        </div>
+                        <div class="competitor-item">
+                            <div class="competitor-logo" style="background: #5B8A72;">동구밭</div>
+                            <div class="competitor-info">
+                                <h4>표준사업장 (직접 생산)</h4>
+                                <p>비누, 화장품 특화</p>
+                            </div>
+                            <span class="competitor-gap">단일 카테고리</span>
+                        </div>
+                        <div class="competitor-item">
+                            <div class="competitor-logo">꿈드래</div>
+                            <div class="competitor-info">
+                                <h4>한국장애인개발원</h4>
+                                <p>공공기관 우선구매 대상</p>
+                            </div>
+                            <span class="competitor-gap">민간 B2B 없음</span>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1.5rem; padding: 1.25rem; background: rgba(27, 77, 62, 0.1); border-radius: 12px;">
+                        <p style="font-size: 0.9rem; color: var(--primary); font-weight: 600; text-align: center;">
+                            <i class="fas fa-lightbulb"></i>
+                            기존 사업자 = 경쟁자가 아닌 <strong>입점 파트너</strong><br>
+                            다양한 품목을 한 곳에서 계약·관리하는 플랫폼은 부재
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 차별화 포인트 추가 -->
+            <div class="differentiation fade-in" style="margin-top: 3rem; background: white; border-radius: 20px; padding: 2rem; box-shadow: var(--shadow-lg);">
+                <h3 style="font-size: 1.25rem; font-weight: 700; text-align: center; margin-bottom: 2rem; color: var(--text-dark);">
+                    에이블링크 핵심 차별화
+                </h3>
+                <div class="diff-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+                    <div class="diff-item" style="text-align: center; padding: 1rem;">
+                        <div style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-shopping-cart" style="color: white; font-size: 1.5rem;"></i>
+                        </div>
+                        <h4 style="font-size: 1rem; margin-bottom: 0.5rem; color: var(--text-dark); word-break: keep-all;">장바구니 방식</h4>
+                        <p style="font-size: 0.875rem; color: var(--text-muted); word-break: keep-all;">여러 시설 제품을 한 번에 주문</p>
+                    </div>
+                    <div class="diff-item" style="text-align: center; padding: 1rem;">
+                        <div style="width: 60px; height: 60px; background: var(--gradient-warm); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-file-invoice" style="color: white; font-size: 1.5rem;"></i>
+                        </div>
+                        <h4 style="font-size: 1rem; margin-bottom: 0.5rem; color: var(--text-dark); word-break: keep-all;">증빙은 각각, 관리는 통합</h4>
+                        <p style="font-size: 0.875rem; color: var(--text-muted); word-break: keep-all;">세금계산서는 시설별 발행, 플랫폼이 통합 관리</p>
+                    </div>
+                    <div class="diff-item" style="text-align: center; padding: 1rem;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #10B981 0%, #059669 100%); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-lock" style="color: white; font-size: 1.5rem;"></i>
+                        </div>
+                        <h4 style="font-size: 1rem; margin-bottom: 0.5rem; color: var(--text-dark); word-break: keep-all;">1년 락인 구조</h4>
+                        <p style="font-size: 0.875rem; color: var(--text-muted); word-break: keep-all;">법적 요건이 만드는 자연스러운 고객 유지</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Revenue Section -->
+    <section class="section revenue-section" id="revenue">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <span class="section-tag">Business Model</span>
+                <h2 class="section-title">사업 구조 및 수익 모델</h2>
+                <p class="section-desc">
+                    플랫폼은 중개자 역할만 수행 — 법적 요건이 만드는 자연스러운 락인 구조
+                </p>
+            </div>
+            
+            <!-- 사업 구조 설명 -->
+            <div class="fade-in" style="background: white; border-radius: 20px; padding: 2rem; box-shadow: var(--shadow-lg); margin-bottom: 3rem;">
+                <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-dark); margin-bottom: 1.5rem; text-align: center;">
+                    <i class="fas fa-sitemap" style="color: var(--primary); margin-right: 0.5rem;"></i>
+                    플랫폼 사업 구조
+                </h3>
+                <div style="display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 1rem; align-items: center; margin-bottom: 2rem;">
+                    <div style="background: rgba(59,130,246,0.1); border-radius: 16px; padding: 1.5rem; text-align: center;">
+                        <div style="width: 50px; height: 50px; background: #3B82F6; border-radius: 12px; margin: 0 auto 0.75rem; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-building" style="color: white; font-size: 1.25rem;"></i>
+                        </div>
+                        <h4 style="font-size: 1rem; font-weight: 600; color: #1E40AF; margin-bottom: 0.25rem;">구매 기업</h4>
+                        <p style="font-size: 0.8rem; color: #3B82F6;">부담금 납부 대상</p>
+                    </div>
+                    <i class="fas fa-arrows-alt-h" style="font-size: 1.5rem; color: #D1D5DB;"></i>
+                    <div style="background: var(--gradient-primary); border-radius: 16px; padding: 1.5rem; text-align: center; color: white;">
+                        <div style="width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 12px; margin: 0 auto 0.75rem; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-link" style="color: white; font-size: 1.25rem;"></i>
+                        </div>
+                        <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem;">에이블링크</h4>
+                        <p style="font-size: 0.8rem; opacity: 0.9;">중개 · 계약관리 · 증빙</p>
+                    </div>
+                    <i class="fas fa-arrows-alt-h" style="font-size: 1.5rem; color: #D1D5DB;"></i>
+                    <div style="background: rgba(16,185,129,0.1); border-radius: 16px; padding: 1.5rem; text-align: center;">
+                        <div style="width: 50px; height: 50px; background: #10B981; border-radius: 12px; margin: 0 auto 0.75rem; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-industry" style="color: white; font-size: 1.25rem;"></i>
+                        </div>
+                        <h4 style="font-size: 1rem; font-weight: 600; color: #065F46; margin-bottom: 0.25rem;">생산시설</h4>
+                        <p style="font-size: 0.8rem; color: #10B981;">세금계산서 직접 발행</p>
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+                    <div style="background: #F9FAFB; border-radius: 12px; padding: 1rem; text-align: center;">
+                        <i class="fas fa-file-contract" style="color: var(--primary); font-size: 1.25rem; margin-bottom: 0.5rem;"></i>
+                        <p style="font-size: 0.85rem; color: var(--text-dark);"><strong>1년 도급계약</strong><br>기업 ↔ 생산시설 직접 체결</p>
+                    </div>
+                    <div style="background: #F9FAFB; border-radius: 12px; padding: 1rem; text-align: center;">
+                        <i class="fas fa-receipt" style="color: var(--primary); font-size: 1.25rem; margin-bottom: 0.5rem;"></i>
+                        <p style="font-size: 0.85rem; color: var(--text-dark);"><strong>세금계산서</strong><br>생산시설 → 기업 직접 발행</p>
+                    </div>
+                    <div style="background: #F9FAFB; border-radius: 12px; padding: 1rem; text-align: center;">
+                        <i class="fas fa-hand-holding-usd" style="color: var(--primary); font-size: 1.25rem; margin-bottom: 0.5rem;"></i>
+                        <p style="font-size: 0.85rem; color: var(--text-dark);"><strong>대금 결제</strong><br>기업 → 생산시설 직접 지급</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 수익원 테이블 -->
+            <div class="fade-in" style="background: white; border-radius: 20px; padding: 2rem; box-shadow: var(--shadow-lg); margin-bottom: 3rem;">
+                <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-dark); margin-bottom: 1.5rem;">
+                    <i class="fas fa-coins" style="color: var(--accent); margin-right: 0.5rem;"></i>
+                    수익원 구조
+                </h3>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+                        <thead>
+                            <tr style="background: var(--background);">
+                                <th style="padding: 1rem; text-align: left; font-weight: 600; color: var(--text-dark); border-bottom: 2px solid #E5E7EB;">수익원</th>
+                                <th style="padding: 1rem; text-align: left; font-weight: 600; color: var(--text-dark); border-bottom: 2px solid #E5E7EB;">과금 대상</th>
+                                <th style="padding: 1rem; text-align: left; font-weight: 600; color: var(--text-dark); border-bottom: 2px solid #E5E7EB;">방식</th>
+                                <th style="padding: 1rem; text-align: left; font-weight: 600; color: var(--text-dark); border-bottom: 2px solid #E5E7EB;">금액</th>
+                                <th style="padding: 1rem; text-align: left; font-weight: 600; color: var(--text-dark); border-bottom: 2px solid #E5E7EB;">근거</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 1rem; border-bottom: 1px solid #F3F4F6;">
+                                    <strong style="color: var(--primary);"><i class="fas fa-crown" style="margin-right: 0.5rem;"></i>플랫폼 이용료</strong>
+                                </td>
+                                <td style="padding: 1rem; border-bottom: 1px solid #F3F4F6; color: var(--text-dark);">구매 기업</td>
+                                <td style="padding: 1rem; border-bottom: 1px solid #F3F4F6; color: var(--text-dark);">월정액 구독</td>
+                                <td style="padding: 1rem; border-bottom: 1px solid #F3F4F6;"><span style="background: rgba(27,77,62,0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 20px; font-weight: 600;">월 10~50만원</span></td>
+                                <td style="padding: 1rem; border-bottom: 1px solid #F3F4F6; color: var(--text-muted); font-size: 0.875rem;">계약관리, 감면계산, 증빙 자동화</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 1rem; border-bottom: 1px solid #F3F4F6;">
+                                    <strong style="color: var(--accent);"><i class="fas fa-percentage" style="margin-right: 0.5rem;"></i>거래 수수료</strong>
+                                </td>
+                                <td style="padding: 1rem; border-bottom: 1px solid #F3F4F6; color: var(--text-dark);">생산시설</td>
+                                <td style="padding: 1rem; border-bottom: 1px solid #F3F4F6; color: var(--text-dark);">거래액 %</td>
+                                <td style="padding: 1rem; border-bottom: 1px solid #F3F4F6;"><span style="background: rgba(244,162,97,0.15); color: #C2410C; padding: 0.25rem 0.75rem; border-radius: 20px; font-weight: 600;">2~5%</span></td>
+                                <td style="padding: 1rem; border-bottom: 1px solid #F3F4F6; color: var(--text-muted); font-size: 0.875rem;">판로 확보 대가 (기업 감면액 영향 無)</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 1rem; border-bottom: 1px solid #F3F4F6;">
+                                    <strong style="color: #7C3AED;"><i class="fas fa-star" style="margin-right: 0.5rem;"></i>프리미엄 기능</strong>
+                                </td>
+                                <td style="padding: 1rem; border-bottom: 1px solid #F3F4F6; color: var(--text-dark);">기업</td>
+                                <td style="padding: 1rem; border-bottom: 1px solid #F3F4F6; color: var(--text-dark);">별도 과금</td>
+                                <td style="padding: 1rem; border-bottom: 1px solid #F3F4F6;"><span style="background: rgba(124,58,237,0.1); color: #7C3AED; padding: 0.25rem 0.75rem; border-radius: 20px; font-weight: 600;">월 30~100만원</span></td>
+                                <td style="padding: 1rem; border-bottom: 1px solid #F3F4F6; color: var(--text-muted); font-size: 0.875rem;">ESG 리포트, 전담 매니저, API 연동</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 1rem;">
+                                    <strong style="color: #0891B2;"><i class="fas fa-ad" style="margin-right: 0.5rem;"></i>입점/광고비</strong>
+                                </td>
+                                <td style="padding: 1rem; color: var(--text-dark);">생산시설</td>
+                                <td style="padding: 1rem; color: var(--text-dark);">월정액/건당</td>
+                                <td style="padding: 1rem;"><span style="background: rgba(8,145,178,0.1); color: #0891B2; padding: 0.25rem 0.75rem; border-radius: 20px; font-weight: 600;">월 5~20만원</span></td>
+                                <td style="padding: 1rem; color: var(--text-muted); font-size: 0.875rem;">상위 노출, 추천 배치</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- 수수료 대상 선택 이유 -->
+                <div style="margin-top: 1.5rem; padding: 1.25rem; background: #FFFBEB; border-radius: 12px; border-left: 4px solid #F59E0B;">
+                    <p style="font-size: 0.9rem; color: #92400E; margin: 0;">
+                        <i class="fas fa-lightbulb" style="margin-right: 0.5rem;"></i>
+                        <strong>거래 수수료를 생산시설에게 받는 이유:</strong> 기업에게 수수료를 부과하면 실질 거래액이 줄어 감면액 계산에 영향을 줄 수 있음. 생산시설 입장에서는 "판로 확보 대가"로 납득 가능.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- 고객 세그먼트별 플랜 -->
+            <div class="fade-in" style="margin-bottom: 3rem;">
+                <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-dark); margin-bottom: 1.5rem; text-align: center;">
+                    <i class="fas fa-users" style="color: var(--primary); margin-right: 0.5rem;"></i>
+                    기업 규모별 요금제
+                </h3>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+                    <div style="background: white; border-radius: 20px; padding: 2rem; box-shadow: var(--shadow-md); text-align: center; border: 2px solid transparent;">
+                        <div style="background: #F3F4F6; color: var(--text-dark); padding: 0.5rem 1rem; border-radius: 20px; display: inline-block; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem;">스타터</div>
+                        <h4 style="font-size: 1.1rem; color: var(--text-dark); margin-bottom: 0.5rem;">100~300인 사업장</h4>
+                        <div style="font-size: 2rem; font-weight: 800; color: var(--primary); margin: 1rem 0;">월 10만원</div>
+                        <ul style="list-style: none; text-align: left; font-size: 0.9rem; color: var(--text-dark);">
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid #F3F4F6;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i>감면 계산기</li>
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid #F3F4F6;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i>제품 검색/주문</li>
+                            <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i>기본 증빙 자동화</li>
+                        </ul>
+                    </div>
+                    <div style="background: white; border-radius: 20px; padding: 2rem; box-shadow: var(--shadow-lg); text-align: center; border: 2px solid var(--primary); transform: scale(1.02);">
+                        <div style="background: var(--primary); color: white; padding: 0.5rem 1rem; border-radius: 20px; display: inline-block; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem;">추천</div>
+                        <h4 style="font-size: 1.1rem; color: var(--text-dark); margin-bottom: 0.5rem;">300~1,000인 사업장</h4>
+                        <div style="font-size: 2rem; font-weight: 800; color: var(--primary); margin: 1rem 0;">월 30만원</div>
+                        <ul style="list-style: none; text-align: left; font-size: 0.9rem; color: var(--text-dark);">
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid #F3F4F6;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i>스타터 기능 전체</li>
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid #F3F4F6;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i>ESG 리포트 기본</li>
+                            <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i>우선 고객 지원</li>
+                        </ul>
+                    </div>
+                    <div style="background: white; border-radius: 20px; padding: 2rem; box-shadow: var(--shadow-md); text-align: center; border: 2px solid transparent;">
+                        <div style="background: var(--accent); color: white; padding: 0.5rem 1rem; border-radius: 20px; display: inline-block; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem;">엔터프라이즈</div>
+                        <h4 style="font-size: 1.1rem; color: var(--text-dark); margin-bottom: 0.5rem;">1,000인+ 사업장</h4>
+                        <div style="font-size: 2rem; font-weight: 800; color: var(--primary); margin: 1rem 0;">협의</div>
+                        <ul style="list-style: none; text-align: left; font-size: 0.9rem; color: var(--text-dark);">
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid #F3F4F6;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i>비즈니스 기능 전체</li>
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid #F3F4F6;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i>ERP/P2P 연동</li>
+                            <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: var(--success); margin-right: 0.5rem;"></i>전담 매니저 배정</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 매출 시뮬레이션 -->
+            <div class="fade-in" style="background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); border-radius: 20px; padding: 2rem; color: white;">
+                <h3 style="font-size: 1.25rem; font-weight: 700; text-align: center; margin-bottom: 2rem; color: white;">
+                    <i class="fas fa-chart-line" style="margin-right: 0.5rem;"></i>
+                    예상 매출 시뮬레이션
+                </h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <!-- 1년차 -->
+                    <div style="background: rgba(255,255,255,0.1); border-radius: 16px; padding: 1.5rem; backdrop-filter: blur(10px);">
+                        <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 1rem; color: var(--accent);">1년차 (100개사)</h4>
+                        <ul style="list-style: none; font-size: 0.9rem; color: rgba(255,255,255,0.9);">
+                            <li style="padding: 0.5rem 0; display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                <span>구독료</span><strong style="color: white;">2.4억원</strong>
+                            </li>
+                            <li style="padding: 0.5rem 0; display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                <span>거래 수수료 (30억 × 3%)</span><strong style="color: white;">9,000만원</strong>
+                            </li>
+                            <li style="padding: 0.5rem 0; display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                <span>입점비 (50개 시설)</span><strong style="color: white;">6,000만원</strong>
+                            </li>
+                            <li style="padding: 0.75rem 0; display: flex; justify-content: space-between; font-size: 1.1rem;">
+                                <span style="font-weight: 600;">총 연매출</span><strong style="color: var(--accent); font-size: 1.25rem;">약 3.9억원</strong>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 3년차 -->
+                    <div style="background: rgba(255,255,255,0.1); border-radius: 16px; padding: 1.5rem; backdrop-filter: blur(10px);">
+                        <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 1rem; color: var(--accent);">3년차 (500개사)</h4>
+                        <ul style="list-style: none; font-size: 0.9rem; color: rgba(255,255,255,0.9);">
+                            <li style="padding: 0.5rem 0; display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                <span>구독료</span><strong style="color: white;">15억원</strong>
+                            </li>
+                            <li style="padding: 0.5rem 0; display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                <span>거래 수수료 (200억 × 3%)</span><strong style="color: white;">6억원</strong>
+                            </li>
+                            <li style="padding: 0.5rem 0; display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                <span>입점비 + 프리미엄</span><strong style="color: white;">2억원</strong>
+                            </li>
+                            <li style="padding: 0.75rem 0; display: flex; justify-content: space-between; font-size: 1.1rem;">
+                                <span style="font-weight: 600;">총 연매출</span><strong style="color: var(--accent); font-size: 1.25rem;">약 23억원</strong>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 1.5rem; font-size: 0.85rem; color: rgba(255,255,255,0.7);">
+                    * 평균 연간 거래액 3,000만원/사, 평균 구독료 월 20~25만원 기준
+                </p>
+            </div>
+            
+            <!-- 핵심 포인트 -->
+            <div class="fade-in" style="margin-top: 3rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
+                <div style="background: white; border-radius: 16px; padding: 1.5rem; text-align: center; box-shadow: var(--shadow-md);">
+                    <i class="fas fa-crown" style="font-size: 2rem; color: var(--primary); margin-bottom: 0.75rem;"></i>
+                    <h4 style="font-size: 0.95rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.25rem;">구독료가 메인</h4>
+                    <p style="font-size: 0.8rem; color: var(--text-muted);">안정적 반복 매출</p>
+                </div>
+                <div style="background: white; border-radius: 16px; padding: 1.5rem; text-align: center; box-shadow: var(--shadow-md);">
+                    <i class="fas fa-lock" style="font-size: 2rem; color: var(--accent); margin-bottom: 0.75rem;"></i>
+                    <h4 style="font-size: 0.95rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.25rem;">1년 계약 락인</h4>
+                    <p style="font-size: 0.8rem; color: var(--text-muted);">낮은 이탈률</p>
+                </div>
+                <div style="background: white; border-radius: 16px; padding: 1.5rem; text-align: center; box-shadow: var(--shadow-md);">
+                    <i class="fas fa-shield-alt" style="font-size: 2rem; color: var(--success); margin-bottom: 0.75rem;"></i>
+                    <h4 style="font-size: 0.95rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.25rem;">감면액 영향 없음</h4>
+                    <p style="font-size: 0.8rem; color: var(--text-muted);">수수료는 생산시설에게</p>
+                </div>
+                <div style="background: white; border-radius: 16px; padding: 1.5rem; text-align: center; box-shadow: var(--shadow-md);">
+                    <i class="fas fa-chart-bar" style="font-size: 2rem; color: #7C3AED; margin-bottom: 0.75rem;"></i>
+                    <h4 style="font-size: 0.95rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.25rem;">업셀 기회</h4>
+                    <p style="font-size: 0.8rem; color: var(--text-muted);">대기업 프리미엄</p>
+                </div>
+            </div>
+        </div>
+    </section>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section class="section roadmap-section" id="roadmap">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <span class="section-tag">Roadmap</span>
+                <h2 class="section-title">사업 로드맵</h2>
+                <p class="section-desc">
+                    단계별 확장 전략으로 시장 선점
+                </p>
+            </div>
+            <div class="roadmap-timeline">
+                <div class="roadmap-item fade-in">
+                    <div class="roadmap-content">
+                        <div class="roadmap-dot"></div>
+                        <span class="roadmap-phase">Phase 1 (6개월)</span>
+                        <h4>MVP 출시 및 시장 검증</h4>
+                        <p>핵심 기능 중심의 MVP 개발 및 초기 고객 확보</p>
+                        <div class="roadmap-tags">
+                            <span class="roadmap-tag">감면 계산기</span>
+                            <span class="roadmap-tag">제품 카탈로그</span>
+                            <span class="roadmap-tag">기본 증빙 자동화</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="roadmap-item fade-in">
+                    <div class="roadmap-content">
+                        <div class="roadmap-dot"></div>
+                        <span class="roadmap-phase">Phase 2 (12개월)</span>
+                        <h4>플랫폼 고도화</h4>
+                        <p>B2B 결제 시스템 구축 및 ESG 리포트 기능 확대</p>
+                        <div class="roadmap-tags">
+                            <span class="roadmap-tag">결제 시스템</span>
+                            <span class="roadmap-tag">ESG 리포트</span>
+                            <span class="roadmap-tag">대기업 연동</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="roadmap-item fade-in">
+                    <div class="roadmap-content">
+                        <div class="roadmap-dot"></div>
+                        <span class="roadmap-phase">Phase 3 (24개월)</span>
+                        <h4>시장 확장</h4>
+                        <p>장애인 고용 컨설팅 및 추가 서비스 확대</p>
+                        <div class="roadmap-tags">
+                            <span class="roadmap-tag">고용 컨설팅</span>
+                            <span class="roadmap-tag">표준사업장 매칭</span>
+                            <span class="roadmap-tag">자체 제조</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risk Section -->
+    <section class="section risk-section" id="risk">
+        <div class="section-container">
+            <div class="section-header fade-in">
+                <span class="section-tag">Risk Management</span>
+                <h2 class="section-title">리스크 및 대응 전략</h2>
+                <p class="section-desc">
+                    예상 리스크에 대한 선제적 대응 방안
+                </p>
+            </div>
+            <div class="risk-grid">
+                <div class="risk-card fade-in">
+                    <div class="risk-header">
+                        <div class="risk-icon"><i class="fas fa-gavel"></i></div>
+                        <h3>법적 리스크</h3>
+                    </div>
+                    <p>세금계산서 발행 구조 위반 시 감면 자격 상실 가능</p>
+                    <div class="risk-solution">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>플랫폼을 중개자 역할로 한정하고, 세금계산서는 반드시 생산시설이 직접 발행하도록 시스템 설계</span>
+                    </div>
+                </div>
+                <div class="risk-card fade-in">
+                    <div class="risk-header">
+                        <div class="risk-icon"><i class="fas fa-box-open"></i></div>
+                        <h3>품질 편차</h3>
+                    </div>
+                    <p>생산시설별 제품 품질 차이로 인한 기업 불만족</p>
+                    <div class="risk-solution">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>사전 품질 인증 시스템 구축 및 구매자 리뷰/평점 시스템 운영</span>
+                    </div>
+                </div>
+                <div class="risk-card fade-in">
+                    <div class="risk-header">
+                        <div class="risk-icon"><i class="fas fa-truck"></i></div>
+                        <h3>납기 문제</h3>
+                    </div>
+                    <p>생산시설의 납기 지연으로 인한 서비스 신뢰도 하락</p>
+                    <div class="risk-solution">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>생산능력·재고 상태 실시간 표시 및 분산 발주 기능 구축</span>
+                    </div>
+                </div>
+                <div class="risk-card fade-in">
+                    <div class="risk-header">
+                        <div class="risk-icon"><i class="fas fa-landmark"></i></div>
+                        <h3>정책 변경</h3>
+                    </div>
+                    <p>장애인고용촉진법/감면율 변동 가능성</p>
+                    <div class="risk-solution">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>정책 모니터링 시스템 구축 및 법률 자문단 운영으로 신속 대응</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content fade-in">
+            <h2 class="cta-title">함께 만들어가는 포용적 일자리</h2>
+            <p class="cta-desc">
+                에이블링크는 장애인 일자리 창출, 기업 부담금 절감, ESG 경영 강화를<br>
+                동시에 실현하는 사회적 가치 플랫폼입니다.
+            </p>
+            <div class="cta-highlights">
+                <div class="cta-highlight">
+                    <i class="fas fa-check"></i>
+                    <span>법적 적합성 검증 완료</span>
+                </div>
+                <div class="cta-highlight">
+                    <i class="fas fa-check"></i>
+                    <span>시장 선점 기회</span>
+                </div>
+                <div class="cta-highlight">
+                    <i class="fas fa-check"></i>
+                    <span>사회적 가치 창출</span>
+                </div>
+            </div>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary">
+                    <i class="fas fa-rocket"></i>
+                    투자 문의하기
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    <i class="fas fa-download"></i>
+                    IR 자료 다운로드
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>
+                    <span style="width: 36px; height: 36px; background: var(--accent); border-radius: 10px; display: inline-flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-link"></i>
+                    </span>
+                    에이블링크
+                </h3>
+                <p>
+                    장애인 생산시설과 기업을 연결하는<br>
+                    B2B 중개 플랫폼<br><br>
+                    기업의 장애인 고용부담금 감면과<br>
+                    장애인 일자리 창출을 동시에 실현합니다.
+                </p>
+            </div>
+            <div class="footer-links">
+                <h4>플랫폼</h4>
+                <ul>
+                    <li><a href="#">감면 계산기</a></li>
+                    <li><a href="#">제품 카탈로그</a></li>
+                    <li><a href="#">ESG 리포트</a></li>
+                    <li><a href="#">API 연동</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>고객지원</h4>
+                <ul>
+                    <li><a href="#">이용 가이드</a></li>
+                    <li><a href="#">자주 묻는 질문</a></li>
+                    <li><a href="#">문의하기</a></li>
+                    <li><a href="#">파트너십</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>회사</h4>
+                <ul>
+                    <li><a href="#">회사 소개</a></li>
+                    <li><a href="#">채용</a></li>
+                    <li><a href="#">블로그</a></li>
+                    <li><a href="#">뉴스룸</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 에이블링크. All rights reserved.</p>
+            <p>
+                <a href="#" style="color: inherit; margin-right: 1.5rem;">이용약관</a>
+                <a href="#" style="color: inherit; margin-right: 1.5rem;">개인정보처리방침</a>
+                <a href="#" style="color: inherit;">사업자정보</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll Animation
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        fadeElements.forEach(el => observer.observe(el));
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Nav background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 100) {
+                nav.style.boxShadow = 'var(--shadow-md)';
+            } else {
+                nav.style.boxShadow = 'var(--shadow-sm)';
+            }
+        });
+    </script>
+</body>
+</html>
