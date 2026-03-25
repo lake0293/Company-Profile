@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>관리APP 사업 타당성 시각화</title>
+  <style>
+    :root {
+      --bg: #f4f1ea;
+      --paper: #fffdf8;
+      --ink: #1f2937;
+      --muted: #6b7280;
+      --line: #d6d0c4;
+      --accent: #0f766e;
+      --accent-2: #b45309;
+      --soft: #e6f4f1;
+      --soft-2: #fff1df;
+      --danger: #b91c1c;
+      --ok: #166534;
+      --shadow: 0 14px 40px rgba(38, 32, 24, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, #fef3c7 0, transparent 28%),
+        radial-gradient(circle at top right, #d1fae5 0, transparent 24%),
+        linear-gradient(180deg, #f8f5ef 0%, var(--bg) 100%);
+      line-height: 1.55;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, rgba(15,118,110,.96), rgba(180,83,9,.9));
+      color: #fff;
+      border-radius: 28px;
+      padding: 36px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: clamp(28px, 5vw, 48px);
+      line-height: 1.1;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 820px;
+      font-size: 16px;
+      opacity: .95;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      grid-column: span 12;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h2 {
+      margin: 0 0 16px;
+      font-size: 24px;
+    }
+
+    .sub {
+      color: var(--muted);
+      margin-top: -6px;
+      margin-bottom: 18px;
+      font-size: 14px;
+    }
+
+    .span-6 { grid-column: span 6; }
+    .span-4 { grid-column: span 4; }
+    .span-8 { grid-column: span 8; }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .pill {
+      background: rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.22);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+    }
+
+    .flow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .step {
+      flex: 1 1 150px;
+      background: var(--soft);
+      border: 1px solid #bfe4de;
+      border-radius: 18px;
+      padding: 16px;
+      min-height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .arrow {
+      font-size: 28px;
+      color: var(--accent);
+      flex: 0 0 auto;
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .problem-box {
+      border-radius: 18px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .problem-box h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+
+    ul.flat {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .matrix {
+      overflow: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th, td {
+      border-bottom: 1px solid var(--line);
+      padding: 12px 10px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .score {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .high { background: #dcfce7; color: var(--ok); }
+    .mid { background: #fef3c7; color: #92400e; }
+    .low { background: #fee2e2; color: var(--danger); }
+
+    .quad {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .quad-box {
+      min-height: 150px;
+      border-radius: 20px;
+      padding: 18px;
+      border: 1px solid var(--line);
+    }
+
+    .q1 { background: #eefbf8; }
+    .q2 { background: #f3f9ed; }
+    .q3 { background: #fff8eb; }
+    .q4 { background: #fff1f1; }
+
+    .bars {
+      display: grid;
+      gap: 14px;
+    }
+
+    .bar-row {
+      display: grid;
+      grid-template-columns: 220px 1fr 70px;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .bar {
+      height: 14px;
+      background: #ece7dd;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .bar > span {
+      display: block;
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    }
+
+    .roadmap {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .phase {
+      border-radius: 20px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: #fff;
+      position: relative;
+    }
+
+    .phase .num {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .revenue {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .revenue-box {
+      border-radius: 18px;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .final {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .summary {
+      background: linear-gradient(135deg, #0f766e, #115e59);
+      color: #fff;
+      border-radius: 24px;
+      padding: 22px;
+    }
+
+    .summary h3 {
+      margin-top: 0;
+    }
+
+    .warning {
+      background: linear-gradient(135deg, #92400e, #b45309);
+      color: #fff;
+      border-radius: 24px;
+      padding: 22px;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.18);
+      font-size: 12px;
+    }
+
+    @media (max-width: 900px) {
+      .span-6, .span-4, .span-8 { grid-column: span 12; }
+      .problem-grid, .roadmap, .revenue, .final { grid-template-columns: 1fr; }
+      .bar-row { grid-template-columns: 1fr; }
+      .quad { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <h1>관리APP 사업 타당성 시각화</h1>
+      <p>핵심 판단은 단순 인력 플랫폼이 아니라, 물류업 특화 <strong>원청-도급사 조달·계약·운영 플랫폼</strong>으로 재정의할 때 사업성이 커진다는 점입니다.</p>
+      <div class="pill-row">
+        <span class="pill">B2B 조달·운영 플랫폼</span>
+        <span class="pill">물류업 특화</span>
+        <span class="pill">협력사 비교·검증</span>
+        <span class="pill">운영 SaaS 확장 가능</span>
+      </div>
+    </section>
+
+    <div class="grid">
+      <section class="card">
+        <h2>1. 사업 구조</h2>
+        <p class="sub">서비스의 출발점은 업체-인력 연결이 아니라 업체-업체 계약관계 강화입니다.</p>
+        <div class="flow">
+          <div class="step">원청</div>
+          <div class="arrow">→</div>
+          <div class="step">협력사 모집 공고</div>
+          <div class="arrow">→</div>
+          <div class="step">도급사 제안 접수</div>
+          <div class="arrow">→</div>
+          <div class="step">비교·검증·선정</div>
+          <div class="arrow">→</div>
+          <div class="step">계약</div>
+          <div class="arrow">→</div>
+          <div class="step">운영 관리</div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>2. 문제 구조</h2>
+        <div class="problem-grid">
+          <div class="problem-box">
+            <h3>원청의 문제</h3>
+            <ul class="flat">
+              <li>적합한 협력사 후보를 빠르게 확보하기 어렵다</li>
+              <li>단가 외 품질, 대응력, 안전성을 같이 봐야 한다</li>
+              <li>계약 이후 현장 운영 통제가 어렵다</li>
+            </ul>
+          </div>
+          <div class="problem-box">
+            <h3>도급사의 문제</h3>
+            <ul class="flat">
+              <li>영업 채널 부족으로 신규 원청 확보가 어렵다</li>
+              <li>실력과 이력을 표준화해 증명하기 어렵다</li>
+              <li>반복 거래로 이어질 데이터가 남지 않는다</li>
+            </ul>
+          </div>
+          <div class="problem-box">
+            <h3>물류업 특성</h3>
+            <ul class="flat">
+              <li>다수 협력사를 병행 운영하는 경우가 많다</li>
+              <li>센터, 지역, 시즌별 수요 변동이 크다</li>
+              <li>긴급 대응력과 운영 품질이 매우 중요하다</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="card span-6">
+        <h2>3. 타당성 판단 매트릭스</h2>
+        <div class="matrix">
+          <table>
+            <thead>
+              <tr>
+                <th>항목</th>
+                <th>평가</th>
+                <th>설명</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>문제의 실재성</td>
+                <td><span class="score high">높음</span></td>
+                <td>물류업에서 협력사 선정과 운영 관리 문제는 실제로 반복된다.</td>
+              </tr>
+              <tr>
+                <td>고객의 비용 지불 가능성</td>
+                <td><span class="score high">중상</span></td>
+                <td>조달 실패, 재선정, 운영 사고 비용을 줄이는 효과가 크다.</td>
+              </tr>
+              <tr>
+                <td>초기 범위 적정성</td>
+                <td><span class="score low">중하</span></td>
+                <td>매칭과 운영 SaaS를 동시에 넣으면 너무 넓어진다.</td>
+              </tr>
+              <tr>
+                <td>차별화 가능성</td>
+                <td><span class="score high">중상</span></td>
+                <td>원청-도급사 조달·검증에 집중하면 포지션이 선명해진다.</td>
+              </tr>
+              <tr>
+                <td>중장기 확장성</td>
+                <td><span class="score high">높음</span></td>
+                <td>계약 이후 운영 SaaS와 인력관리로 자연스럽게 이어진다.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card span-6">
+        <h2>4. 시장 포지션</h2>
+        <p class="sub">차별화와 초기 실행 난도를 같이 보면 어디서 시작할지가 보입니다.</p>
+        <div class="quad">
+          <div class="quad-box q1">
+            <strong>차별화 높음 / 난도 높음</strong>
+            <ul class="flat">
+              <li>원청-도급사-인력 통합 플랫폼</li>
+            </ul>
+          </div>
+          <div class="quad-box q2">
+            <strong>차별화 높음 / 난도 중간</strong>
+            <ul class="flat">
+              <li>원청-도급사 조달 플랫폼</li>
+              <li>추천 시작점</li>
+            </ul>
+          </div>
+          <div class="quad-box q3">
+            <strong>차별화 낮음 / 난도 중간</strong>
+            <ul class="flat">
+              <li>현장 운영 SaaS 단독</li>
+            </ul>
+          </div>
+          <div class="quad-box q4">
+            <strong>차별화 낮음 / 난도 높음</strong>
+            <ul class="flat">
+              <li>업체-인력 일반 매칭 플랫폼</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>5. 국내 유사 서비스 맵</h2>
+        <div class="matrix">
+          <table>
+            <thead>
+              <tr>
+                <th>분류</th>
+                <th>예시</th>
+                <th>하고 있는 일</th>
+                <th>시사점</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>인력 매칭형</td>
+                <td>일가자</td>
+                <td>현장 인력 알선, 출역현황, 노임대장, 계약/명세서</td>
+                <td>업체-인력 연결 자체는 이미 경쟁이 많다.</td>
+              </tr>
+              <tr>
+                <td>운영 SaaS형</td>
+                <td>시프티, 샤플, WORKSCAN</td>
+                <td>근태, QR/GPS 출퇴근, 전자계약, 공지, 리포트</td>
+                <td>운영 기능 단독으로는 차별화가 약하다.</td>
+              </tr>
+              <tr>
+                <td>전자계약/인사 보조형</td>
+                <td>flex</td>
+                <td>전자계약, 계약 상태 관리, 인사 기능 일부</td>
+                <td>계약 디지털화 자체는 이미 보편화되어 있다.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>정리:</strong> 유사 서비스는 존재하지만, 원청이 여러 협력사를 모집·비교·검증·선정하고 이후 운영까지 한 흐름으로 묶은 대표 서비스는 아직 선명하지 않습니다.</p>
+      </section>
+
+      <section class="card span-8">
+        <h2>6. 왜 지금 구조가 유리한가</h2>
+        <div class="bars">
+          <div class="bar-row">
+            <div>문제의 선명도</div>
+            <div class="bar"><span style="width:88%"></span></div>
+            <div>88%</div>
+          </div>
+          <div class="bar-row">
+            <div>차별화 가능성</div>
+            <div class="bar"><span style="width:72%"></span></div>
+            <div>72%</div>
+          </div>
+          <div class="bar-row">
+            <div>초기 실행 난이도</div>
+            <div class="bar"><span style="width:63%"></span></div>
+            <div>63%</div>
+          </div>
+          <div class="bar-row">
+            <div>중장기 확장성</div>
+            <div class="bar"><span style="width:91%"></span></div>
+            <div>91%</div>
+          </div>
+          <div class="bar-row">
+            <div>거래수수료만으로 수익 안정성</div>
+            <div class="bar"><span style="width:34%"></span></div>
+            <div>34%</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card span-4">
+        <h2>7. 핵심 포인트</h2>
+        <ul class="flat">
+          <li>핵심은 업체-인력이 아니라 업체-업체 관계다</li>
+          <li>공공입찰보다는 민간 RFQ 구조에 가깝다</li>
+          <li>운영 SaaS는 1단계가 아니라 2단계 확장이다</li>
+          <li>수익은 구독형과 부가 과금이 더 안정적이다</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>8. 권장 MVP</h2>
+        <div class="flow">
+          <div class="step">원청 가입</div>
+          <div class="arrow">→</div>
+          <div class="step">협력사 모집 공고</div>
+          <div class="arrow">→</div>
+          <div class="step">제안서 제출</div>
+          <div class="arrow">→</div>
+          <div class="step">비교 화면</div>
+          <div class="arrow">→</div>
+          <div class="step">검증 체크리스트</div>
+          <div class="arrow">→</div>
+          <div class="step">선정·계약 기록</div>
+        </div>
+        <div class="problem-grid" style="margin-top:16px;">
+          <div class="problem-box">
+            <h3>포함</h3>
+            <ul class="flat">
+              <li>공고 등록</li>
+              <li>제안 접수</li>
+              <li>비교/검토</li>
+              <li>검증 체크리스트</li>
+              <li>선정 처리</li>
+              <li>계약 문서 보관</li>
+            </ul>
+          </div>
+          <div class="problem-box">
+            <h3>제외</h3>
+            <ul class="flat">
+              <li>개인 근로자 앱</li>
+              <li>QR 출결</li>
+              <li>급여/정산 자동화</li>
+              <li>공개형 대규모 마켓</li>
+            </ul>
+          </div>
+          <div class="problem-box">
+            <h3>성공 기준</h3>
+            <ul class="flat">
+              <li>원청이 엑셀/메신저보다 편하다고 느낀다</li>
+              <li>실제 선정 과정이 시스템 안에서 끝난다</li>
+              <li>다음 거래에 재사용할 데이터가 남는다</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>9. 수익 구조</h2>
+        <div class="revenue">
+          <div class="revenue-box">
+            <strong>기본 구독료</strong>
+            <p>원청 대상 월 구독으로 기본 매출을 확보</p>
+          </div>
+          <div class="revenue-box">
+            <strong>부가 기능 과금</strong>
+            <p>계약, 서류검증, 리포트, 평가 기능 추가 과금</p>
+          </div>
+          <div class="revenue-box">
+            <strong>거래성 수익</strong>
+            <p>노출, 제안, 선정 수수료를 선택적으로 붙일 수 있음</p>
+          </div>
+          <div class="revenue-box">
+            <strong>운영 SaaS 확장</strong>
+            <p>추후 사업장 수, 좌석 수 기준으로 추가 과금</p>
+          </div>
+        </div>
+        <p><strong>권장:</strong> 기본 구독료 + 협력사 관리/계약/리포트 기능 과금 + 이후 운영 SaaS 추가 과금</p>
+        <p><strong>비권장:</strong> 입찰 성사 수수료만 의존하는 구조</p>
+      </section>
+
+      <section class="card">
+        <h2>10. 단계별 확장 로드맵</h2>
+        <div class="roadmap">
+          <div class="phase">
+            <div class="num">1</div>
+            <strong>원청-도급사 조달/계약</strong>
+            <ul class="flat">
+              <li>협력사 모집</li>
+              <li>제안 접수</li>
+              <li>비교·검증</li>
+              <li>계약 기록</li>
+            </ul>
+          </div>
+          <div class="phase">
+            <div class="num">2</div>
+            <strong>원청-도급사 운영관리</strong>
+            <ul class="flat">
+              <li>서류 관리</li>
+              <li>계약 이력</li>
+              <li>센터 운영 현황</li>
+              <li>수행 평가</li>
+            </ul>
+          </div>
+          <div class="phase">
+            <div class="num">3</div>
+            <strong>도급사-인력 운영 SaaS</strong>
+            <ul class="flat">
+              <li>출퇴근</li>
+              <li>교육</li>
+              <li>서류</li>
+              <li>인력 배치</li>
+            </ul>
+          </div>
+          <div class="phase">
+            <div class="num">4</div>
+            <strong>원청-도급사-인력 통합</strong>
+            <ul class="flat">
+              <li>현장별 인력 현황</li>
+              <li>협력사 성과</li>
+              <li>운영 품질 분석</li>
+              <li>추천 고도화</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>11. 최종 판단</h2>
+        <div class="final">
+          <div class="summary">
+            <h3>사업성 있음</h3>
+            <p>물류업 특화 관점에서 보면 협력사 모집, 비교, 검증, 계약, 운영 연결 문제는 실제로 존재하고 반복됩니다.</p>
+            <span class="tag">문제의 실재성 높음</span>
+            <span class="tag">확장성 높음</span>
+            <span class="tag">B2B 과금 가능</span>
+          </div>
+          <div class="warning">
+            <h3>주의점</h3>
+            <p>처음부터 업체-인력 매칭, 개인 지원, 운영 SaaS를 모두 넣으면 구조가 과도하게 복잡해집니다.</p>
+            <span class="tag">초기 범위 과대 금지</span>
+            <span class="tag">거래수수료 단독 모델 위험</span>
+          </div>
+        </div>
+        <p style="margin-top:18px;"><strong>한 줄 결론:</strong> 업체-인력 플랫폼으로 보면 평범하지만, <strong>물류업 특화 원청-도급사 조달·계약·운영 플랫폼</strong>으로 재정의하면 충분히 승부할 여지가 있습니다.</p>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
