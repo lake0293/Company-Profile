@@ -1,0 +1,729 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LOGISIAN 근로자 안전앱 목업</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="mockup-stage">
+      <section class="phone" aria-label="근로자 앱 목업">
+        <header class="app-header">
+          <div class="brand-row">
+            <img src="./assets/logisian-logo.jpg" alt="LOGISIAN" />
+            <button class="icon-button" type="button" aria-label="알림">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9" />
+                <path d="M13.7 21a2 2 0 0 1-3.4 0" />
+              </svg>
+              <span class="dot"></span>
+            </button>
+          </div>
+          <div class="worker-strip">
+            <span>김현수 · 인천 3센터 · 피킹 A조</span>
+          </div>
+        </header>
+
+        <div class="screen is-active" data-screen="home">
+          <section class="today-risk">
+            <div>
+              <span class="eyebrow">TODAY 위험성평가</span>
+              <h1>피크데이 주의</h1>
+              <p>출고량 +60%, 피킹/출고 구역 혼잡 예상</p>
+            </div>
+            <div class="risk-meter high">
+              <strong>높음</strong>
+              <span>R* 17</span>
+            </div>
+          </section>
+
+          <section class="notice-panel">
+            <div class="section-title">
+              <h2>공지사항</h2>
+              <span>09:15 갱신</span>
+            </div>
+            <div class="notice-tabs" role="tablist" aria-label="공지 구분">
+              <button type="button" data-notice-tab="company" role="tab" aria-selected="false">전사공지</button>
+              <button class="is-active" type="button" data-notice-tab="site" role="tab" aria-selected="true">현장공지</button>
+            </div>
+            <div class="notice-content" data-notice-panel="company" role="tabpanel">
+              <article class="notice-item">
+                <span>안전보건팀</span>
+                <strong>5월 정기 안전보건교육 이수 기간 안내</strong>
+              </article>
+              <article class="notice-item">
+                <span>본사 공지</span>
+                <strong>폭염 대비 작업자 휴식 기준과 음용수 배치 안내</strong>
+              </article>
+            </div>
+            <div class="notice-content is-active" data-notice-panel="site" role="tabpanel">
+              <article class="notice-item critical">
+                <span>피킹 2구역</span>
+                <strong>결빙 위험 구간 LED 라인 안쪽 진입 금지</strong>
+              </article>
+              <article class="notice-item">
+                <span>출고 도크</span>
+                <strong>대기선 준수, 지게차 접근 시 정지</strong>
+              </article>
+            </div>
+          </section>
+
+          <section class="action-grid" aria-label="오늘 할 일">
+            <button class="action-card done" type="button" data-jump="education">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                <path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5Z" />
+              </svg>
+              <span>정기교육 이동</span>
+              <strong>외부 연결</strong>
+            </button>
+            <button class="action-card urgent" type="button" data-jump="tbm">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+              <span>10분 안전미팅(TBM)</span>
+              <strong>미참석</strong>
+            </button>
+            <button class="action-card" type="button" data-jump="risk">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M10.3 3.4 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.4a2 2 0 0 0-3.4 0Z" />
+                <path d="M12 9v4" />
+                <path d="M12 17h.01" />
+              </svg>
+              <span>공정별 위험</span>
+              <strong>6개 확인</strong>
+            </button>
+            <button class="action-card" type="button" data-jump="suggest">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z" />
+              </svg>
+              <span>개선제안</span>
+              <strong>즉시 등록</strong>
+            </button>
+            <button class="action-card" type="button" data-jump="safety">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" />
+                <path d="M14 2v6h6" />
+                <path d="M8 13h8" />
+                <path d="M8 17h5" />
+              </svg>
+              <span>안전자료</span>
+              <strong>문서 · 비상대응</strong>
+            </button>
+            <button class="action-card emergency-card" type="button" data-jump="emergency">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M10.3 3.4 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.4a2 2 0 0 0-3.4 0Z" />
+                <path d="M12 8v5" />
+                <path d="M12 17h.01" />
+              </svg>
+              <span>비상알람</span>
+              <strong>관리자 즉시 알림</strong>
+            </button>
+          </section>
+        </div>
+
+        <div class="screen" data-screen="education">
+          <section class="screen-head">
+            <span class="eyebrow">정기교육</span>
+            <h1>외부 교육사이트 이동</h1>
+          </section>
+          <section class="education-card">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+              <path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5Z" />
+            </svg>
+            <h2>법정 정기 안전보건교육</h2>
+            <p>실서비스에서는 사내 LMS 또는 외부 교육 플랫폼으로 연결됩니다.</p>
+            <button class="primary-action" type="button">교육사이트 열기</button>
+          </section>
+        </div>
+
+        <div class="screen" data-screen="tbm">
+          <section class="screen-head">
+            <span class="eyebrow">10분 안전미팅</span>
+            <h1>QR 참석 후 TBM 체크</h1>
+          </section>
+
+          <section class="meeting-card">
+            <div class="meeting-time">
+              <strong>08:20</strong>
+              <span>피킹 A조 집결</span>
+            </div>
+            <h2>피크데이 혼잡 동선 관리</h2>
+            <ul>
+              <li>정지선과 지정 경로 준수</li>
+              <li>고중량 화물 무리 작업 금지</li>
+              <li>스캔 오류·바닥 이상 즉시 보고</li>
+            </ul>
+          </section>
+
+          <section class="attendance">
+            <div>
+              <span>참석 현황</span>
+              <strong id="attendanceCount">18 / 24명</strong>
+            </div>
+            <button class="outline-action" type="button" id="showQrButton">QR 참석</button>
+          </section>
+
+          <section class="qr-panel" id="qrPanel" aria-live="polite">
+            <div class="fake-qr" aria-label="샘플 QR 코드">
+              <svg viewBox="0 0 120 120" aria-hidden="true">
+                <rect width="120" height="120" fill="#fff" />
+                <rect x="8" y="8" width="28" height="28" fill="#111827" />
+                <rect x="14" y="14" width="16" height="16" fill="#fff" />
+                <rect x="84" y="8" width="28" height="28" fill="#111827" />
+                <rect x="90" y="14" width="16" height="16" fill="#fff" />
+                <rect x="8" y="84" width="28" height="28" fill="#111827" />
+                <rect x="14" y="90" width="16" height="16" fill="#fff" />
+                <rect x="48" y="10" width="8" height="8" fill="#111827" />
+                <rect x="62" y="10" width="8" height="18" fill="#111827" />
+                <rect x="44" y="34" width="18" height="8" fill="#111827" />
+                <rect x="72" y="40" width="8" height="24" fill="#111827" />
+                <rect x="44" y="54" width="8" height="8" fill="#111827" />
+                <rect x="58" y="54" width="22" height="8" fill="#111827" />
+                <rect x="92" y="48" width="20" height="8" fill="#111827" />
+                <rect x="42" y="76" width="18" height="8" fill="#111827" />
+                <rect x="66" y="78" width="8" height="26" fill="#111827" />
+                <rect x="82" y="76" width="30" height="8" fill="#111827" />
+                <rect x="90" y="94" width="8" height="18" fill="#111827" />
+                <rect x="104" y="98" width="8" height="8" fill="#111827" />
+                <rect x="46" y="98" width="12" height="12" fill="#111827" />
+              </svg>
+            </div>
+            <div>
+              <strong>관리자 TBM QR</strong>
+              <p>현장에서 QR을 스캔하면 참석자로 등록되고, 관리자가 확정한 TBM 교육시간이 일괄 적용됩니다.</p>
+              <button class="primary-action compact" type="button" id="startTbmButton">다음</button>
+            </div>
+          </section>
+
+          <section class="tbm-activity" id="tbmActivity">
+            <div class="timer-card">
+              <div>
+                <span>관리자 시작</span>
+                <strong id="tbmStartTime">08:20</strong>
+              </div>
+              <div>
+                <span>교육 적용시간</span>
+                <strong id="tbmElapsed">종료 후 확정</strong>
+              </div>
+            </div>
+            <p class="tbm-sync-note">근로자는 체크와 문항을 제출하고, 교육시간은 관리자가 TBM 종료를 누르면 QR 참석 인원에게 동일하게 반영됩니다.</p>
+
+            <section class="media-box">
+              <div class="section-title">
+                <h2>관리자 업로드 자료</h2>
+                <span>이미지 · 영상</span>
+              </div>
+              <img src="./assets/tbm-notice.png" alt="TBM 관리자 업로드 이미지 예시" />
+              <div class="video-placeholder">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <polygon points="9 7 17 12 9 17 9 7" />
+                  <circle cx="12" cy="12" r="10" />
+                </svg>
+                <span>피킹 2구역 결빙 주의 영상 00:38</span>
+              </div>
+            </section>
+
+            <section class="tbm-question-panel" aria-label="TBM 선택형 질문">
+              <div class="section-title">
+                <h2>TBM 고정 건강체크</h2>
+                <span>필수</span>
+              </div>
+              <p>오늘 작업 전 몸 상태는 어떤가요?</p>
+              <div class="choice-grid" role="group" aria-label="오늘 작업 전 몸 상태">
+                <button class="choice-option is-selected" type="button" aria-pressed="true">좋음</button>
+                <button class="choice-option" type="button" aria-pressed="false">보통</button>
+                <button class="choice-option" type="button" aria-pressed="false">피로</button>
+                <button class="choice-option attention" type="button" aria-pressed="false">관리자 확인 필요</button>
+              </div>
+            </section>
+
+            <section class="check-list tbm-checks">
+              <button class="check-row tbm-check" type="button" aria-pressed="false">
+                <span class="check-dot"></span>
+                <strong>보호구 착용과 작업 전 안전체크를 완료했습니다.</strong>
+              </button>
+              <button class="check-row tbm-check" type="button" aria-pressed="false">
+                <span class="check-dot"></span>
+                <strong>TBM 구호를 함께 외쳤습니다.</strong>
+              </button>
+              <button class="check-row tbm-check" type="button" aria-pressed="false">
+                <span class="check-dot"></span>
+                <strong>오늘의 안전공지와 위험요인을 숙지했습니다.</strong>
+              </button>
+              <button class="check-row tbm-check" type="button" aria-pressed="false">
+                <span class="check-dot"></span>
+                <strong>관리자가 올린 이미지 또는 영상을 확인했습니다.</strong>
+              </button>
+            </section>
+
+            <section class="signature-panel" aria-label="TBM 참여 서명">
+              <div class="section-title">
+                <h2>참여 서명</h2>
+                <span>필수</span>
+              </div>
+              <p>위 TBM에 참여하고 내용을 숙지했습니다. 손가락 또는 마우스로 서명하세요.</p>
+              <div class="signature-pad">
+                <canvas id="signatureCanvas" width="320" height="120" aria-label="TBM 참여 서명 입력"></canvas>
+                <span id="signaturePlaceholder">여기에 서명</span>
+              </div>
+              <div class="signature-actions">
+                <button class="outline-action compact" type="button" id="clearSignatureButton">서명 지우기</button>
+                <span id="signatureState">서명 대기</span>
+              </div>
+            </section>
+
+            <button class="primary-action" type="button" id="completeTbmButton">문항 제출 및 서명 완료</button>
+            <p class="complete-note" id="completeNote"></p>
+          </section>
+        </div>
+
+        <div class="screen" data-screen="risk">
+          <section class="screen-head">
+            <span class="eyebrow">TODAY 위험성평가</span>
+            <h1>공정별 위험도</h1>
+          </section>
+          <section class="risk-summary">
+            <div>
+              <span>기본위험도</span>
+              <strong>중간</strong>
+            </div>
+            <div>
+              <span>WMS 보정계수</span>
+              <strong>1.42</strong>
+            </div>
+            <div class="danger">
+              <span>동적위험도</span>
+              <strong>높음</strong>
+            </div>
+          </section>
+          <section class="process-list">
+            <article>
+              <strong>입고</strong>
+              <span class="grade medium">중간</span>
+              <p>파렛트 균형·결속 확인, 도크 대기선 준수</p>
+            </article>
+            <article>
+              <strong>하역</strong>
+              <span class="grade high">높음</span>
+              <p>지게차 접근 시 정지, 유도자 수신호 확인</p>
+            </article>
+            <article>
+              <strong>운반/이동</strong>
+              <span class="grade medium">중간</span>
+              <p>역주행 금지, AGV 경고라인 안쪽 이동 금지</p>
+            </article>
+            <article>
+              <strong>피킹</strong>
+              <span class="grade high">높음</span>
+              <p>무리한 고중량 취급 금지, 바닥 이상 즉시 신고</p>
+            </article>
+            <article>
+              <strong>출고</strong>
+              <span class="grade critical">매우 높음</span>
+              <p>램프 구간 저속 이동, 차량 협착 주의</p>
+            </article>
+          </section>
+        </div>
+
+        <div class="screen" data-screen="suggest">
+          <section class="screen-head">
+            <span class="eyebrow">안전개선제안</span>
+            <h1>위험요인 신고</h1>
+          </section>
+          <form class="suggest-form">
+            <button class="photo-drop" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2Z" />
+                <circle cx="12" cy="13" r="4" />
+              </svg>
+              <span>사진 첨부</span>
+            </button>
+            <label>
+              <span>구역</span>
+              <select>
+                <option>피킹 2구역</option>
+                <option>출고 도크</option>
+                <option>운반 통로</option>
+              </select>
+            </label>
+            <label>
+              <span>유형</span>
+              <select>
+                <option>미끄럼·전도</option>
+                <option>충돌·협착</option>
+                <option>낙하·파손</option>
+              </select>
+            </label>
+            <label>
+              <span>내용</span>
+              <textarea rows="4">바닥 결빙으로 카트 이동 시 미끄럼 위험이 있습니다.</textarea>
+            </label>
+          </form>
+          <div class="dual-actions">
+            <button class="danger-action" type="button" data-jump="emergency">긴급신고</button>
+            <button class="primary-action" type="button">제안 등록</button>
+          </div>
+        </div>
+
+        <div class="screen" data-screen="safety">
+          <section class="screen-head">
+            <span class="eyebrow">안전자료</span>
+            <h1>법정문서와 비상대응</h1>
+          </section>
+          <section class="library-panel">
+            <div class="library-tabs" role="tablist" aria-label="안전자료 구분">
+              <button class="is-active" type="button" data-library-tab="common" role="tab" aria-selected="true">공통자료</button>
+              <button type="button" data-library-tab="site" role="tab" aria-selected="false">현장자료</button>
+              <button type="button" data-library-tab="response" role="tab" aria-selected="false">비상대응</button>
+            </div>
+
+            <div class="library-content is-active" data-library-panel="common" role="tabpanel">
+              <article class="library-intro legal">
+                <strong>본사 공통 게시자료</strong>
+                <span>전 사업장 근로자에게 동일하게 게시되는 법정문서와 보건자료입니다.</span>
+              </article>
+              <div class="document-list">
+                <button type="button" data-document-open="ISO45001 인증서">
+                  <span>공통 · 인증</span>
+                  <strong>ISO45001 인증서</strong>
+                </button>
+                <button type="button" data-document-open="안전보건경영방침">
+                  <span>공통 · 경영방침</span>
+                  <strong>안전보건경영방침</strong>
+                </button>
+                <button type="button" data-document-open="안전보건 목표">
+                  <span>공통 · 목표</span>
+                  <strong>안전보건 목표</strong>
+                </button>
+                <button type="button" data-document-open="보건 질환 예방자료">
+                  <span>공통 · 예방자료</span>
+                  <strong>보건 질환 예방자료</strong>
+                </button>
+                <button type="button" data-document-open="안전보건규정">
+                  <span>공통 · 규정</span>
+                  <strong>안전보건규정</strong>
+                </button>
+                <button type="button" data-document-open="취업규칙">
+                  <span>공통 · 인사규정</span>
+                  <strong>취업규칙</strong>
+                </button>
+              </div>
+              <p class="complete-note" id="documentOpenNote"></p>
+            </div>
+
+            <div class="library-content" data-library-panel="site" role="tabpanel">
+              <article class="library-intro site-doc">
+                <strong>인천 3센터 현장자료</strong>
+                <span>내 소속 사업장과 직무에 맞춰 별도로 게시된 자료입니다.</span>
+              </article>
+              <div class="document-list">
+                <button type="button" data-document-open="인천 3센터 비상대피도">
+                  <span>현장 · 비상대피</span>
+                  <strong>인천 3센터 비상대피도</strong>
+                </button>
+                <button type="button" data-document-open="피킹 A조 작업동선">
+                  <span>현장 · 작업절차</span>
+                  <strong>피킹 A조 작업동선</strong>
+                </button>
+                <button type="button" data-document-open="출고 도크 협착주의">
+                  <span>현장 · 위험공지</span>
+                  <strong>출고 도크 협착주의</strong>
+                </button>
+              </div>
+            </div>
+
+            <div class="library-content" data-library-panel="response" role="tabpanel">
+              <article class="library-intro response">
+                <strong>비상대응</strong>
+                <span>사고 발생 시 절차와 중대재해 대응 기준을 확인합니다.</span>
+              </article>
+              <div class="response-list">
+                <button class="response-card" type="button" data-document-open="사고발생 프로세스">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 9v4" />
+                    <path d="M12 17h.01" />
+                    <path d="M10.3 3.4 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.4a2 2 0 0 0-3.4 0Z" />
+                  </svg>
+                  <span>사고발생 프로세스</span>
+                  <strong>보고 · 대피 · 응급조치 절차</strong>
+                </button>
+                <button class="response-card critical" type="button" data-document-open="중대재해 대응 매뉴얼">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M10.3 3.4 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.4a2 2 0 0 0-3.4 0Z" />
+                    <path d="M12 8v5" />
+                    <path d="M12 17h.01" />
+                  </svg>
+                  <span>중대재해 대응 매뉴얼</span>
+                  <strong>작업중지 · 보고라인 · 현장보존</strong>
+                </button>
+              </div>
+            </div>
+            <p class="complete-note" id="documentOpenNoteGlobal"></p>
+          </section>
+        </div>
+
+        <div class="screen" data-screen="status">
+          <section class="screen-head">
+            <span class="eyebrow">내 현황</span>
+            <h1>안전활동과 건강관리</h1>
+          </section>
+          <section class="status-panel">
+            <div class="status-tabs" role="tablist" aria-label="내 현황 구분">
+              <button class="is-active" type="button" data-status-tab="activity" role="tab" aria-selected="true">활동이력</button>
+              <button type="button" data-status-tab="health" role="tab" aria-selected="false">건강관리</button>
+              <button type="button" data-status-tab="profile" role="tab" aria-selected="false">내 정보</button>
+            </div>
+
+            <div class="status-content is-active" data-status-panel="activity" role="tabpanel">
+              <h2 class="status-section-title">TBM 활동이력</h2>
+              <section class="metric-strip">
+                <div>
+                  <span>이번 달 TBM</span>
+                  <strong>18회</strong>
+                </div>
+                <div>
+                  <span>교육(예정)</span>
+                  <strong>2/3</strong>
+                </div>
+                <div>
+                  <span>제안/신고</span>
+                  <strong>4건</strong>
+                </div>
+              </section>
+              <div class="history-list">
+                <article>
+                  <span>오늘 08:31</span>
+                  <strong>10분 안전미팅(TBM) 완료</strong>
+                  <p>피크데이 혼잡 동선 관리 · 활동시간 07:42</p>
+                </article>
+                <article>
+                  <span>어제 08:24</span>
+                  <strong>위험성평가 확인</strong>
+                  <p>피킹/출고 위험도 높음 공지 숙지</p>
+                </article>
+                <article>
+                  <span>05.06 16:18</span>
+                  <strong>안전개선제안 등록</strong>
+                  <p>출고 램프 인근 누수 신고 · 처리중</p>
+                </article>
+                <article>
+                  <span>05.03 10:05</span>
+                  <strong>정기교육 이수 예정</strong>
+                  <p>물류센터 지게차 접촉재해 예방교육 · 05.10까지</p>
+                </article>
+              </div>
+            </div>
+
+            <div class="status-content" data-status-panel="health" role="tabpanel">
+              <div class="health-action-grid">
+                <article class="health-callout">
+                  <strong>입사시 기본 건강문진</strong>
+                  <span>최초 등록 시 한 번 작성하고, 사업장 배치 전 기본 건강상태를 확인합니다.</span>
+                  <button class="primary-action compact" type="button" data-health-form="join">입사문진 작성</button>
+                </article>
+                <article class="health-callout">
+                  <strong>연 1회 정기 건강문진</strong>
+                  <span>매년 1회 작성하며, 확인 필요 응답은 관리자 상담으로 이어집니다.</span>
+                  <button class="primary-action compact" type="button" data-health-form="annual">연간문진 작성</button>
+                </article>
+              </div>
+              <section class="questionnaire">
+                <h2>연간 기본 문진 샘플</h2>
+                <label class="choice-row">
+                  <span>최근 1주일 내 어지럼 또는 호흡곤란이 있었나요?</span>
+                  <select>
+                    <option>없음</option>
+                    <option>있음</option>
+                  </select>
+                </label>
+                <label class="choice-row">
+                  <span>허리, 어깨, 손목 등 근골격계 통증이 있나요?</span>
+                  <select>
+                    <option>없음</option>
+                    <option>가벼움</option>
+                    <option>심함</option>
+                  </select>
+                </label>
+                <label class="choice-row">
+                  <span>오늘 피로도</span>
+                  <input type="range" min="1" max="5" value="3" aria-label="오늘 피로도" />
+                </label>
+              </section>
+              <section class="questionnaire health-write-panel" id="healthWritePanel" aria-hidden="true">
+                <h2 id="healthWriteTitle">문진표 작성</h2>
+                <label class="choice-row">
+                  <span>최근 1주일 내 어지럼 또는 호흡곤란이 있었나요?</span>
+                  <select>
+                    <option>없음</option>
+                    <option>있음</option>
+                  </select>
+                </label>
+                <label class="choice-row">
+                  <span>작업에 영향을 줄 수 있는 통증이 있나요?</span>
+                  <select>
+                    <option>없음</option>
+                    <option>가벼움</option>
+                    <option>관리자 상담 요청</option>
+                  </select>
+                </label>
+                <label class="choice-row">
+                  <span>개인정보 및 건강문진 활용 안내를 확인했습니다.</span>
+                  <input type="checkbox" checked aria-label="동의 확인" />
+                </label>
+                <button class="primary-action compact" type="button" id="submitHealthFormButton">문진표 제출</button>
+                <p class="complete-note" id="healthSubmitNote"></p>
+              </section>
+              <div class="history-list compact-list">
+                <article>
+                  <span>오늘 08:21</span>
+                  <strong>TBM 고정 건강체크 제출</strong>
+                  <p>TBM 시작 전 고정문항 · 피로도 보통 · 특이사항 없음</p>
+                </article>
+                <article>
+                  <span>05.01</span>
+                  <strong>연 1회 간이 건강문진표 작성</strong>
+                  <p>제출 완료 · 관리자 확인 대기</p>
+                </article>
+              </div>
+            </div>
+
+            <div class="status-content" data-status-panel="profile" role="tabpanel">
+              <section class="profile-card">
+                <div>
+                  <strong>김현수</strong>
+                  <span>인천 3센터 · 피킹 A조</span>
+                </div>
+                <button class="outline-action" type="button">개인정보 변경</button>
+              </section>
+              <div class="profile-list">
+                <article>
+                  <span>연락처</span>
+                  <strong>010-0000-0000</strong>
+                </article>
+                <article>
+                  <span>직무</span>
+                  <strong>피킹 작업자</strong>
+                </article>
+                <article>
+                  <span>알림 설정</span>
+                  <strong>TBM · 위험공지 · 비상알람 수신</strong>
+                </article>
+                <article>
+                  <span>계정</span>
+                  <strong>비밀번호 변경 · 로그아웃</strong>
+                </article>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="screen" data-screen="emergency">
+          <section class="screen-head emergency-head">
+            <span class="eyebrow">비상알람</span>
+            <h1>관리자 즉시 신고</h1>
+          </section>
+          <section class="emergency-panel">
+            <p>상황을 빠르게 선택하면 현장 관리자에게 즉시 알림이 전송되는 흐름입니다.</p>
+            <div class="quick-alerts" aria-label="비상 유형">
+              <button type="button">화재·연기</button>
+              <button type="button">끼임·협착</button>
+              <button type="button">낙상·전도</button>
+              <button type="button">지게차 충돌</button>
+              <button type="button">응급환자</button>
+              <button type="button">설비 고장</button>
+              <button type="button" data-other-alert="true">기타</button>
+            </div>
+            <label class="other-reason" id="otherReason">
+              <span>기타 사유</span>
+              <textarea rows="4" placeholder="기타 상황을 입력하세요. 예: 출고 램프 인근 누수로 미끄럼 위험"></textarea>
+            </label>
+            <button class="danger-action wide" type="button" id="sendEmergencyButton">관리자 알림 전송</button>
+            <p class="complete-note" id="emergencyNote"></p>
+            <div class="emergency-links">
+              <button type="button" data-jump="safety" data-library-jump="response">사고발생 프로세스 보기</button>
+              <button type="button" data-jump="safety" data-library-jump="response">중대재해 매뉴얼 보기</button>
+            </div>
+          </section>
+        </div>
+
+        <nav class="bottom-nav" aria-label="주요 메뉴">
+          <button class="is-active" type="button" data-tab="home">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z" />
+            </svg>
+            <span>홈</span>
+          </button>
+          <button type="button" data-tab="tbm">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+            </svg>
+            <span>TBM</span>
+          </button>
+          <button type="button" data-tab="risk">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M10.3 3.4 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.4a2 2 0 0 0-3.4 0Z" />
+              <path d="M12 9v4" />
+              <path d="M12 17h.01" />
+            </svg>
+            <span>위험</span>
+          </button>
+          <button type="button" data-tab="suggest">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z" />
+            </svg>
+            <span>제안</span>
+          </button>
+          <button type="button" data-tab="status">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 21a8 8 0 1 0-16 0" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+            <span>내 현황</span>
+          </button>
+        </nav>
+      </section>
+
+      <aside class="side-panel">
+        <span class="panel-kicker">Worker Version</span>
+        <h2>물류센터 작업자 안전앱</h2>
+        <p>
+          일일 건강·안전 체크를 TBM 참석 흐름 안으로 합치고, QR 참석 후 관리자가 등록한
+          오늘의 TBM 자료와 체크항목을 수행하는 방식으로 재구성했습니다.
+        </p>
+        <div class="screen-switcher" aria-label="목업 화면 전환">
+          <button class="is-active" type="button" data-tab="home">오늘의 홈</button>
+          <button type="button" data-tab="education">정기교육</button>
+          <button type="button" data-tab="status">내 현황</button>
+          <button type="button" data-tab="tbm">10분 TBM</button>
+          <button type="button" data-tab="risk">위험성평가</button>
+          <button type="button" data-tab="suggest">개선제안</button>
+          <button type="button" data-tab="safety">안전자료</button>
+          <button type="button" data-tab="emergency">비상알람</button>
+        </div>
+        <dl class="reference-notes">
+          <div>
+            <dt>TBM 흐름</dt>
+            <dd>QR 참석, 건강체크, 안전체크, 구호, 공지숙지</dd>
+          </div>
+          <div>
+            <dt>교육</dt>
+            <dd>외부 교육사이트 연결 예정</dd>
+          </div>
+          <div>
+            <dt>비상</dt>
+            <dd>퀵버튼 또는 기타 사유로 관리자 즉시 알림</dd>
+          </div>
+        </dl>
+      </aside>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
